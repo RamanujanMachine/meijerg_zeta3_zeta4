@@ -1,0 +1,64 @@
+Independent audit of the second-order trace improvement
+
+Files inspected:
+- work/meijerg5255_improved/arithmetic/second_order_certificate.py and .json
+- work/meijerg5255_arithmetic/arithmetic/all_shell_cells.py
+- work/meijerg5255_arithmetic/arithmetic/shell_chamber_certificate.py
+
+Conclusion: the trace argument and the affine all-lift certificate are sound.
+The two fractional windows are (1/10,2/19) and (11/12,15/16).
+No finite-depth extrapolation is required for the arithmetic implication.
+
+For h=-1 residue classes the local high-root kernel is independent of the
+residue. Every h=0 kernel differs from it by one monic affine factor. The
+formal root deformation has degree -2, so the residue sum and its first
+parameter derivative give two exact identities. The polynomial
+(X^p-X)F_0 has degree p-2; its derivative supplies the remaining finite-field
+sum. Together they make the full trace sum_k p F_n(k+pV) vanish modulo p^2.
+The first window's inclusive integer boundaries and the complete algebra
+are recorded in work/meijerg5255_improved/paths/trace_audit.tex.
+
+All-lift justification: every high-root interval endpoint is an affine
+label (m,c), representing mt+c for x=t+f. The signed boundary Counter for
+U_k/U reduces to +1 at (m,c) and -1 at (m,c+1), identically in t. Therefore
+U_k/U=V-(mt+c) for every t>=0. This is stronger than checking a selection
+of t. The minimal tagged intervals are identical within each Farey cell.
+Root count h is unchanged by the lift: numerator and denominator counts
+each increase by 30t. The certificate checks open residue cells and their
+boundaries. Farey-29 cells suffice since root boundary slopes range from
+-17 to 12; differences of slopes have absolute value at most 29.
+
+The affine factors are:
+first window: V+16t+2 or V+2t+1;
+second window: V+17t+16, V-2t-1, or V-10t-9,
+with the permitted subset depending on the fractional Farey cell.
+
+For readouts take representatives 1,...,p and eta=p ceil(2n/p). Moving the
+zero residue from representative 0 to p does not affect the trace modulo
+p^2 because its h is 1. If p>2n, eta=p<10n; otherwise eta<4n. Thus the
+harmonic shift lies in [2n,10n], where the crossed roots are triple zeros.
+For j=-k-p ell and k in [1,p],
+floor((j+eta)/p)=ceil(2n/p)-ell-1, independent of k.
+Also j+eta<19n+p<=29n<p^2. With p>29 and p^2>30n the distinct local high
+poles remain distinct modulo p, and all harmonic weights used after
+extracting grouped Laurent coefficients are p-integral.
+
+Consequently the local Laurent coefficients yield grouped sums
+v_p(sum a_j)>=3 and v_p(sum b_j)>=2. They imply
+v_p(Q_n)>=3, v_p(P_3,n)>=0, v_p(P_4,n)>=-1
+on every periodic lift of either window. This is one additional p factor
+in both normalized arithmetic readouts beyond the accepted first-order
+shell factor. No new analytic growth or error assertion is involved.
+
+Independent verification:
+check_periodic_trace.py checks two alternative rational interior points
+in each of the nine accepted Farey cells, at t=0,1,4,11, including every
+residue boundary and open cell. All 72 rational arrangements and 1440
+residue cells/boundaries pass. These checks support the code audit; the
+uniform conclusion follows from the affine identities above.
+
+Remaining numerical research target: residual common factors outside
+these two periodic windows, or second-order cancellations not satisfying
+the sufficient monic-affine quotient criterion. Do not attribute this
+new trace factor to an optimized native matrix cut: the earlier quarter
+negative cut remains finite evidence only.

@@ -1,0 +1,65 @@
+MeijerG5255 native multiplication-order arithmetic experiments
+=============================================================
+
+Status: NUMERICAL_CANDIDATE. These path experiments establish finite exact
+certificates; they do not establish their asymptotic saving.
+
+Native family MeijerG(5,2,5,5,1), start(1,1,0,0,0;0,0,0,0,0), direction
+(16,17,-11,-12,-10;2,1,0,-1,-2), forward orientation, dimension4,column0.
+T denotes trajectory steps, so the user's index is N=T+1. The rows are
+r3=(0,0,-6,3), r4=(0,0,0,-2), d=(12,0,0,0). Their endpoint scalars are
+12(-1)^T(P3,P4,Q). For integer A,B, use A*r3+B*r4 and d.
+
+Reproduce from the project root:
+  work/.venv_4f3/bin/python work/meijerg5255_arithmetic/paths/check_native.py 50
+  work/.venv_4f3/bin/python work/meijerg5255_arithmetic/paths/search.py 10 20 40 80 160 320
+  work/.venv_4f3/bin/python work/meijerg5255_arithmetic/paths/compare_rows.py 10 20 40 80
+  work/.venv_4f3/bin/python work/meijerg5255_arithmetic/paths/with_baseline.py
+
+The search is checkpointed. It evaluates51two-block paths per depth;
+every prefix times suffix was checked against all16endpoint entries.
+Each certificate keeps the exact incoming row, then takes the rational
+gcd of the four separate products with the suffix column. It does not
+use cancellation of their final sum to strengthen that certificate.
+
+Prime adaptation helps each tested fixed target(1,0),(0,1),(1,1), with
+disjoint maximizing path sets already at p2 versus p3 for T10.
+Independently choosing the combined numerator and denominator paths adds
+factor1 in these fixed-target tests. A different operation DOES help:
+split the numerator A*r3+B*r4 into its two initial rows, certify each
+along its own path, and recombine their endpoint divisibilities.
+
+For example T10,p23, the first-quarter negative-a cut gives row bounds
+(-2,-4,1), while the half negative-a cut gives(-4,-3,1). The best
+same-path common bound is-4; separate initial rows give(-2,-3,1), hence
+common bound-3. This is a strict factor23 and is not a tie-breaking
+artifact. It applies to every integer combination through linearity.
+
+Combining with the uniform factorial/LCM bound and the FIRST broad shell
+8T<p<11T (but not the later14-shell extension), at T320:
+target         baseline logq     path certificate logq    actual logq
+zeta3          30023.457512       29553.086409             29444.397535
+zeta4          36098.641581       35624.570766             35511.556406
+zeta3+zeta4    36098.641581       35624.570766             35511.556406
+
+For the sum target, certifying the two numerator basis rows separately
+supplies factor471953 beyond directly optimizing the combined initial
+row, even after that uniform baseline. These comparisons precede the
+later fourteen-shell proof and must not be represented as improvements
+beyond that stronger certificate.
+
+Files inspected: native RT MeijerG/DFinite/CMF generators, the corrected
+readout reproduction and cached N50 matrix, prior zeta2 path machinery,
+the new rational-kernel, baseline, carry-profile, broad-shell, and
+periodic-shell proof fragments. Files created in this lane: native.py,
+check_native.py, search.py, compare_rows.py, with_baseline.py, AUDIT.txt,
+SECOND_ORDER_NEXT_TARGET.txt, this report, and the results counterpart's
+exact checkpoints/summaries/witnesses/logs. No archive files were edited.
+
+No delta search or new trajectory ranking was performed: the endpoint
+approximants are invariant under these order changes. The separate
+uniform arithmetic arguments were independently audited; see AUDIT.txt.
+The second-order band and a promising explicit cut are recorded as an
+unproved next target in SECOND_ORDER_NEXT_TARGET.txt. Finite gains,
+especially excluded small-prime factors, must not be extrapolated into
+new asymptotic delta bounds.

@@ -1,0 +1,52 @@
+\paragraph{A completed improvement from the infinite prime-density tail.}
+The first 1000 periods need not be the endpoint of the density calculation.
+For $0\le a<b\le1$, the positive function
+$f(t)=(t+a)^{-1}-(t+b)^{-1}$ is decreasing and convex. The trapezoid and
+midpoint inequalities give the explicit two-sided tail bounds
+\[
+ \log\frac{K+b}{K+a}+\frac12\left(\frac1{K+a}-\frac1{K+b}\right)
+ \le \sum_{t=K}^{\infty}f(t)
+ \le \log\frac{K-\frac12+b}{K-\frac12+a}.
+\]
+The logarithms are enclosed by the positive series
+$\log z=2\sum_{j\ge0}u^{2j+1}/(2j+1)$, where $u=(z-1)/(z+1)$,
+with its geometric remainder bound. Applying this with $K=1000$ to
+every baseline cell and every one of the fourteen established periodic
+shells yields
+\[
+ 29.9127079828158127 <\gamma_{\rm established}
+ <29.9127079831445955.
+\]
+An independent Arb evaluation using digamma functions gives
+$\gamma_{\rm established}=29.912707983034852259666192\ldots$.
+Using only the safe rational value $\gamma=29.91270798$, and the same
+accepted analytic rates as before, gives
+\[
+\begin{array}{c|cc|c}
+ &\sigma&\tau&\liminf\delta_N\\\hline
+ B=0&92.538828585866&20.268710661589&>0.21902925\\
+ B\ne0&111.538828585866&1.268710661589&>0.01137460.
+\end{array}
+\]
+This small improvement uses the already established divisibility statement;
+it does not rely on the two additional numerical windows.
+
+\paragraph{The larger improvement identified by the residual gcds.}
+The new second-order lemma establishes an additional common prime factor on
+\[
+ \{n/p\}\in(1/10,2/19)\ \cup\ (11/12,15/16).
+\]
+They pass all 843 eligible prime instances at
+$n=49,99,249,499,999,1999,3999,7999$, for both readouts.
+Their complete prime densities lie respectively in
+\[
+ (0.50751800694358,0.50751800694492),\qquad
+ (0.03832125404609,0.03832125405130).
+\]
+Using their established uniform divisibility, the same rate
+calculation gives $\gamma>30.45854724380549$, and consequently
+$\liminf\delta_N>0.22626234$ for $B=0$ and
+$\liminf\delta_N>0.01634832$ for $B\ne0$.
+These bounds use the separately established uniform second-order trace
+lemma and the accepted analytic estimates. The finite checks alone do not
+establish the arithmetic lemma.

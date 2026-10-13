@@ -1,0 +1,31 @@
+MEIJERG READOUT CORRECTION
+
+Correct native initial-condition matrix:
+  [[0, 0, -6*A, 3*A-2*B], [12, 0, 0, 0]]
+
+Numerically validated coordinate limits:
+  V[2] -> -2*zeta(3)-3*zeta(4)
+  V[3] -> -6*zeta(4), not -6*zeta(3).
+
+1. Files inspected: user-provided code; installed ramanujantools Matrix.walk and MeijerG.trajectory_matrix implementations; native output matrices at N=50,100,250,500. No archive files edited.
+2. Files created: work/meijerg5255_z3_z4_readout/reproduce.py; results/meijerg5255_z3_z4_readout/{readout_check.json,approximants.csv,matrix_N*.json,run.log,assumed_limits_rejected.json,REPORT.txt}.
+3. Experiment recovered: native MeijerG(5,2,5,5,1), 4x4, forward, column0, start(1,1,0,0,0;0,0,0,0,0), direction(16,17,-11,-12,-10;2,1,0,-1,-2), N-1 steps from trajectory index0. Verified A,B=(1,0),(0,1),(1,1) at four depths and two increasing precisions each.
+4. Delta values:
+  N=50, (A,B)=(1,0), reduced q digits=1955, delta=[0.227515704824499121704100190989 +/- 4.20e-31]
+  N=50, (A,B)=(0,1), reduced q digits=2358, delta=[0.0180855103739200481335001181138 +/- 4.53e-33]
+  N=50, (A,B)=(1,1), reduced q digits=2358, delta=[0.0178900486468247619620443535296 +/- 2.02e-32]
+  N=100, (A,B)=(1,0), reduced q digits=3936, delta=[0.232543552639264384204169480690 +/- 2.59e-31]
+  N=100, (A,B)=(0,1), reduced q digits=4756, delta=[0.0196042072098613662842104897970 +/- 4.67e-32]
+  N=100, (A,B)=(1,1), reduced q digits=4756, delta=[0.0195978762194905217445310212729 +/- 2.21e-32]
+  N=250, (A,B)=(1,0), reduced q digits=9914, delta=[0.230499280009226429903859894108 +/- 2.31e-31]
+  N=250, (A,B)=(0,1), reduced q digits=11974, delta=[0.0188273803126012359262560707486 +/- 3.83e-32]
+  N=250, (A,B)=(1,1), reduced q digits=11974, delta=[0.0188260721551241376113268744477 +/- 3.64e-32]
+  N=500, (A,B)=(1,0), reduced q digits=19912, delta=[0.227778715469072278115082096859 +/- 3.46e-31]
+  N=500, (A,B)=(0,1), reduced q digits=24041, delta=[0.0168563087360582893185726718195 +/- 4.98e-32]
+  N=500, (A,B)=(1,1), reduced q digits=24041, delta=[0.0168532791698657832352818557972 +/- 2.44e-32]
+  Last-three-depth slope scores: {'1,0': 0.22644939942187547, '0,1': 0.016048100345398053, '1,1': 0.016045627309543287}
+5. Rejected interpretation: V[-1] -> -6*zeta(3) is incompatible with these numerical outputs. Using the coefficient matrix derived from that incorrect coordinate label gives persistent nonzero target error and delta approaching -1; saved in assumed_limits_rejected.json.
+6. Numerical uncertainties: these are finite high-precision checks, not a proof of the coordinate limits or an asymptotic delta. All errors exclude zero as Arb balls, each rational is reduced before denominator extraction, and increasing precision by100 digits agrees within1e-12 in delta.
+7. Recommended next validation region if extending this check: same start/direction and N=1000,2000 with A,B=(1,1); retain controls(1,0),(0,1), and double-precision checks. No wider trajectory search was needed for this correction.
+
+Replay from the project root: work/.venv_4f3/bin/python work/meijerg5255_z3_z4_readout/reproduce.py

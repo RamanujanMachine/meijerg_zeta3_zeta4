@@ -1,0 +1,114 @@
+MEIJERG ZETA(3)/ZETA(4): IMPROVED ARITHMETIC ESTIMATE
+
+Result
+------
+With the initial conditions and analytic growth/error rates accepted by the
+user, the improved uniform arithmetic argument gives:
+  B=0, A!=0:                liminf delta_N > 0.22626234
+  B!=0, fixed integer A,B:  liminf delta_N > 0.01634832
+Fixed rational coefficients follow by clearing a fixed denominator.
+Previous bounds: 0.2190118 and 0.0113626, respectively.
+The reduced denominator is used throughout. No irrationality-measure upper
+bound or optimal-gcd claim is made.
+
+The new factor
+--------------
+For p>29, p^2>30n, and fractional part of n/p in
+  (1/10,2/19) or (11/12,15/16),
+the rational-kernel trace proves
+  vp(Q_n)>=3, vp(P3_n)>=0, vp(P4_n)>=-1.
+These supply one further common prime factor beyond the first-order shells
+in BOTH the pure3 and joint normalizations. The argument deforms each root
+k+p*l to k+P*l, applies the residue theorem to F_0 and its P derivative,
+then uses the finite-field sum of a polynomial derivative. The cancellation
+is uniform for every integer lift of both fractional intervals.
+
+The common divisor now has logarithmic density greater than
+  30.45854724380549.
+The two new periodic contributions are approximately
+  0.50751800694447 and 0.03832125404955.
+The shifted cutoff eta=p*ceil(2n/p) depends on the prime. The pure3 and joint
+rows use different harmonic orders and lcm powers. Conservation supplies
+the common rational readout to which these primewise choices apply.
+The finite quarter-prefix matrix cut is not the proof of this improvement.
+
+1. Files inspected
+------------------
+Prior manuscript and baseline, carry, shell, native-order, and spectral
+certificates under work/meijerg5255_arithmetic/ and
+results/meijerg5255_arithmetic/; native readout checkpoints under
+results/meijerg5255_z3_z4_readout/; installed ramanujantools implementation.
+New second-order trace proof and three independent audits.
+No archive files were changed.
+
+2. Files created
+----------------
+All new files are under work/meijerg5255_improved/ and
+results/meijerg5255_improved/. Main deliverables:
+  meijerg_zeta3_zeta4_improved.tex and .pdf (15 pages);
+  arithmetic/second_order_trace.tex and second_order_certificate.py/.json;
+  audit/independent_affine_chambers.json;
+  residuals/final_bound_certificate.json and infinite_density.json;
+  residuals/delta_N*.json, delta_summary.json, approximants.csv;
+  verification_summary.json and per-depth divisibility checks;
+  experiment.json and README.txt.
+Reproducibility bundle: results/meijerg_zeta3_zeta4_improved_bundle.zip.
+
+3. Experiment recovered
+----------------------
+MeijerG(5,2,5,5,1); forward native 4x4; column0; n=N-1 steps.
+Start (1,1,0,0,0;0,0,0,0,0).
+Direction (16,17,-11,-12,-10;2,1,0,-1,-2).
+Initial rows [[0,0,-6A,3A-2B],[12,0,0,0]].
+Target A*zeta(3)+B*zeta(4). The trajectory and readout were not changed.
+Gcd scaling only: 6 C_n d_(19n)^r, C_n=(15n)!^2/(10n)!^3,
+r=3 for pure3 and r=4 jointly. This scaling is never substituted for q_N.
+
+4. Delta values and verification
+--------------------------------
+  N       pure3              joint A=B=1
+  1000    .226270805823       .016685345951
+  2000    .227250300699       .016967611459
+  4000    .226324705427       .016428111403
+  8000    .226391177278       .016262704080
+Each is an actual Arb error enclosure, checked at two precisions100 decimal
+digits apart, up to392193 dps. AtN8000 the reduced denominators have319543
+and385613 digits. Last-three-depth slopes: .22615555 and .01603797.
+
+Both exact chamber implementations check270 Farey cells and5400 strata,
+finding exactly9 accepted cells. Affine endpoint identities certify every
+integer lift. A third audit checked72 arrangements and1440 strata.
+All843 eligible prime instances in the new windows pass at eight depths.
+Complete integer forms and denominator divisibility pass at
+n=1,2,3,10,49,99,249,499,999,1999,3999,7999 for
+(A,B)=(1,0),(0,1),(1,1),(1,-1),(2,3),(-7,5).
+The PDF compiled successfully, has no overfull boxes, and all15 pages were
+rendered and visually reviewed, including full-size inspection of new tables.
+
+5. Rejected or unstable extensions
+---------------------------------
+Extending the narrow second window to the entire surrounding first-order
+shell is false: examples n999,p1063,1091,1093,1097 andn1999,p2129,2131.
+No additional pure3-only interval is supported at increasing depths.
+The isolated residual factor p1321 atn7999 is not promoted to a uniform
+positive-density improvement. A general hypergeometric transformation was
+not claimed without a valid parameter specialization.
+
+6. Numerical uncertainties and scope
+------------------------------------
+Finite deltas and denominator slopes oscillate with prime distribution;
+they need not exceed an asymptotic lower bound at every finite N.
+No exact limiting delta or optimal gcd is asserted. The uniform arithmetic
+conclusion follows from the written trace proof, with symbolic certificates;
+finite-depth experiments supplement that proof. Analytic growth and error
+rates remain the user's accepted inputs. Exact-error-zero cases are treated
+as delta=+infinity; no separate qualitative nonvanishing claim is added.
+
+7. Exact recommended next region
+--------------------------------
+Keep this trajectory, readout, and both normalizations fixed. Next numerical
+depth: N=16000 (n=15999). Inspect residual primes after removing the full
+new profile, starting with the chamber 1/19<{n/p}<1/18, where the only
+remaining eligible joint surplus atn7999 is p1321 and {n/p}=73/1321.
+Require persistence at several depths before proposing another interval.
+The two new periodic windows above are already handled uniformly.

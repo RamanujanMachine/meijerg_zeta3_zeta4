@@ -1,0 +1,98 @@
+Status: NUMERICAL_CANDIDATE.
+
+The new uniform second-order lemma establishes one further prime factor in
+the two periodic windows first identified by these residual experiments:
+  {n/p} in (1/10,2/19) or (11/12,15/16), p>29, p^2>30n.
+Both pure3 and joint gcds gain at least one prime factor at all 843 checked
+prime instances: 768 in the first window, 75 in the second. Depths use
+n=N-1 and N=50,100,250,500,1000,2000,4000,8000. No counterexamples.
+
+The second window is new relative to the previously suggested broad
+second-order interval. In its first period p/n lies in (16/15,12/11).
+The larger containing first-order band does NOT always gain a second factor:
+counterexamples include n999,p1063,1091,1093,1097 and n1999,p2129,2131.
+
+At n7999, the two windows leave only one unexplained eligible prime for the
+joint gcd, p1321. Its contribution log(1321)/7999=.0008983803356. Thus no
+further positive-density shell is presently supported by these residuals.
+At lower depths isolated pure3-only and joint-only factors occur; all are
+listed individually in windows.json, and are not promoted to uniform claims.
+Pure4 denominator equals the primitive joint denominator at all eight depths.
+
+Completed improvement using established divisibility only:
+  Enclosing the infinite density tail gives
+  29.9127079828158127 < gamma <29.9127079831445955.
+  Independent Arb/digamma evaluation:
+  gamma=29.91270798303485225966619201821397619684676691147669729...
+  Safe gamma29.91270798 yields delta pure3>.21902925, joint>.01137460,
+  with the previously accepted analytic growth and error rates.
+
+Final improved consequence of the uniform second-order lemma and accepted
+analytic rates:
+  Their densities are .50751800694446697... and .03832125404955458... .
+  Exact lower total gamma>30.45854724380549.
+  Lower delta pure3>.22626234, joint>.01634832.
+  The uniform conclusion comes from the separate residue-root deformation
+  proof and exhaustive affine certificate, not the finite prime checks.
+  final_bound_certificate.py checks the exact integration and rate arithmetic.
+  The accepted analytic estimates remain explicit inputs.
+
+Measured deltas (certified Arb errors, exact reduced denominators):
+  N       pure3                 joint A=B=1
+  1000    .22627080582299638      .01668534595084024
+  2000    .22725030069888607      .01696761145890258
+  4000    .22632470542658408      .01642811140300404
+  8000    .22639117727810758      .01626270408001396
+  Last-three-depth fitted delta slopes:
+  pure3 .22615554921631742; joint .01603797422719988.
+  Fitted error slopes112.8075267244 and112.8075153574 approach the
+  accepted error exponent112.8075392475. Prime-distribution fluctuations
+  still affect denominator slopes and finite deltas.
+  Each depth was independently evaluated at two precisions100 digits apart,
+  from49143 dps to392193 dps. Every error interval excluded zero.
+  Approximation error magnitudes are in delta_N*.json; no error-rate surrogate
+  has been substituted for a measured error.
+
+Files inspected:
+  work/meijerg5255_z3_z4_readout/reproduce.py;
+  results/meijerg5255_z3_z4_readout/matrix_N{50,100,250,500}.json;
+  work/meijerg5255_arithmetic/profiles/finite_profile_precise.py;
+  work/meijerg5255_arithmetic/arithmetic/all_shell_cells.py/.json;
+  work/meijerg5255_arithmetic/paths/native.py,SECOND_ORDER_NEXT_TARGET.txt;
+  previous exact rate certificate and spectral constants.
+  Primary literature: Dauguet-Zudilin2014 eq31, arXiv1401.5322;
+  Zudilin2003 Andrews transformation, arXivmath/0311196.
+
+Files created:
+  work/meijerg5255_improved/residuals/: profile.py,windows.py,
+  infinite_density.py,measure_delta.py,final_bound_certificate.py,
+  final_delta_consequence.tex,density_refinement.tex,
+  hypergeometric_target.tex.
+  results/meijerg5255_improved/residuals/: eight native column checkpoints,
+  eight exact gcd profiles, summary.json,windows.json,infinite_density.json,
+  four delta_N*.json files,delta_summary.json,approximants.csv,run.log,
+  infinite_density_run.log,final_bound_certificate.json,REPORT.txt.
+
+Experiments recovered:
+  Fixed MeijerG(5,2,5,5,1), start(1,1,0,0,0;0,0,0,0,0),
+  direction(16,17,-11,-12,-10;2,1,0,-1,-2), native forward4x4,
+  column0, N-1 steps from index0, numerator(0,0,-6A,3A-2B),
+  denominator(12,0,0,0), target A*zeta(3)+B*zeta(4).
+  Normalization for gcd analysis only:6 C15 d19n^r; it is not used as the
+  reduced approximant denominator. All actual delta calculations reduce p/q.
+
+Rejected or unresolved:
+  Extending the second narrow window to its whole surrounding first-order
+  interval is rejected by explicit counterexamples.
+  No pure3-specific positive-density improvement survives the larger depths.
+  The known Dauguet-Zudilin Whipple transformation requires half-spaced
+  parameter pairs missing from this balanced5F4; no valid specialization
+  giving the desired new prime factor was found.
+
+Recommended next region:
+  The two uniform windows have now been settled by the separate trace lemma.
+  The first recovers density.5 plus its lift tail; the second adds another
+  .0383212540. If further
+  numerical checks are wanted, use n=15999 and retain the existing checkpoints;
+  inspect residual p1321 at n7999 as an isolated factor before widening bands.
+  No additional high-precision search or new trajectory is indicated yet.

@@ -1,0 +1,506 @@
+{
+  "status": "NUMERICAL_CANDIDATE",
+  "scope": "Finite exact verification and conditional asymptotic projection only. Neither new window is established uniformly by this script.",
+  "bands": [
+    [
+      "1/10",
+      "2/19"
+    ],
+    [
+      "11/12",
+      "15/16"
+    ]
+  ],
+  "prime_instances": [
+    768,
+    75
+  ],
+  "counterexamples": [],
+  "densities_lower": [
+    "253756370847383363/500000000000000000",
+    "38300429611724927/1000000000000000000"
+  ],
+  "densities_lower_decimal": [
+    0.5075127416947667,
+    0.038300429611724925
+  ],
+  "densities_upper_decimal": [
+    0.5075180095937716,
+    0.03832126468131506
+  ],
+  "conditional_total_gamma_lower": 30.457205666625004,
+  "conditional_projection": [
+    {
+      "lcm_power": 3,
+      "gamma_lower": "15228602833312502207/500000000000000000",
+      "delta_lower_if_uniform": 0.2262444668575303,
+      "sigma_upper": 91.99433089924099,
+      "tau_lower": 20.813208348214005
+    },
+    {
+      "lcm_power": 4,
+      "gamma_lower": "15228602833312502207/500000000000000000",
+      "delta_lower_if_uniform": 0.016336044674750173,
+      "sigma_upper": 110.99433089924099,
+      "tau_lower": 1.8132083482140045
+    }
+  ],
+  "depths": [
+    {
+      "N": 50,
+      "n": 49,
+      "window_counts": [
+        3,
+        1
+      ],
+      "minimum_extra": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "residual_after_two_windows_density": [
+        0.09647730242270083,
+        0.0
+      ],
+      "residual_primes": [
+        {
+          "p": 113,
+          "n_over_p": "49/113",
+          "f": "49/113",
+          "extra3_after_two_windows": 1,
+          "extra4_after_two_windows": 0,
+          "cell": [
+            "3/7",
+            "10/23"
+          ],
+          "old_shell": 0
+        }
+      ],
+      "actual_gamma3": 29.96659502283601,
+      "actual_gamma4": 29.908834454798736,
+      "denominator_height_per_n": [
+        91.86800052122342,
+        110.79337942770557
+      ]
+    },
+    {
+      "N": 100,
+      "n": 99,
+      "window_counts": [
+        7,
+        1
+      ],
+      "minimum_extra": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "residual_after_two_windows_density": [
+        0.050679594311261865,
+        0.04969677702856692
+      ],
+      "residual_primes": [
+        {
+          "p": 137,
+          "n_over_p": "99/137",
+          "f": "99/137",
+          "extra3_after_two_windows": 0,
+          "extra4_after_two_windows": 1,
+          "cell": [
+            "13/18",
+            "21/29"
+          ],
+          "old_shell": 0
+        },
+        {
+          "p": 151,
+          "n_over_p": "99/151",
+          "f": "99/151",
+          "extra3_after_two_windows": 1,
+          "extra4_after_two_windows": 0,
+          "cell": [
+            "19/29",
+            "2/3"
+          ],
+          "old_shell": 0
+        }
+      ],
+      "actual_gamma3": 31.028208534973928,
+      "actual_gamma4": 31.014571546292288,
+      "denominator_height_per_n": [
+        91.52442412430133,
+        110.61275704943726
+      ]
+    },
+    {
+      "N": 250,
+      "n": 249,
+      "window_counts": [
+        17,
+        2
+      ],
+      "minimum_extra": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "residual_after_two_windows_density": [
+        0.06940706650517817,
+        0.02573706341790963
+      ],
+      "residual_primes": [
+        {
+          "p": 89,
+          "n_over_p": "249/89",
+          "f": "71/89",
+          "extra3_after_two_windows": 1,
+          "extra4_after_two_windows": 0,
+          "cell": [
+            "23/29",
+            "4/5"
+          ],
+          "old_shell": 0
+        },
+        {
+          "p": 593,
+          "n_over_p": "249/593",
+          "f": "249/593",
+          "extra3_after_two_windows": 1,
+          "extra4_after_two_windows": 0,
+          "cell": [
+            "5/12",
+            "8/19"
+          ],
+          "old_shell": 1
+        },
+        {
+          "p": 607,
+          "n_over_p": "249/607",
+          "f": "249/607",
+          "extra3_after_two_windows": 1,
+          "extra4_after_two_windows": 1,
+          "cell": [
+            "9/22",
+            "7/17"
+          ],
+          "old_shell": 0
+        }
+      ],
+      "actual_gamma3": 30.735419279898483,
+      "actual_gamma4": 30.69064835670661,
+      "denominator_height_per_n": [
+        91.67019575766108,
+        110.71842870828769
+      ]
+    },
+    {
+      "N": 500,
+      "n": 499,
+      "window_counts": [
+        28,
+        2
+      ],
+      "minimum_extra": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "residual_after_two_windows_density": [
+        0.0,
+        0.01162749173422257
+      ],
+      "residual_primes": [
+        {
+          "p": 331,
+          "n_over_p": "499/331",
+          "f": "168/331",
+          "extra3_after_two_windows": 0,
+          "extra4_after_two_windows": 1,
+          "cell": [
+            "1/2",
+            "15/29"
+          ],
+          "old_shell": 0
+        }
+      ],
+      "actual_gamma3": 30.761844444286385,
+      "actual_gamma4": 30.780375107350473,
+      "denominator_height_per_n": [
+        91.87799062368525,
+        110.93252059590415
+      ]
+    },
+    {
+      "N": 1000,
+      "n": 999,
+      "window_counts": [
+        55,
+        3
+      ],
+      "minimum_extra": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "residual_after_two_windows_density": [
+        0.01344279516123379,
+        0.011925993904390761
+      ],
+      "residual_primes": [
+        {
+          "p": 179,
+          "n_over_p": "999/179",
+          "f": "104/179",
+          "extra3_after_two_windows": 1,
+          "extra4_after_two_windows": 0,
+          "cell": [
+            "11/19",
+            "7/12"
+          ],
+          "old_shell": 0
+        },
+        {
+          "p": 233,
+          "n_over_p": "999/233",
+          "f": "67/233",
+          "extra3_after_two_windows": 0,
+          "extra4_after_two_windows": 1,
+          "cell": [
+            "2/7",
+            "7/24"
+          ],
+          "old_shell": 0
+        },
+        {
+          "p": 641,
+          "n_over_p": "999/641",
+          "f": "358/641",
+          "extra3_after_two_windows": 0,
+          "extra4_after_two_windows": 1,
+          "cell": [
+            "5/9",
+            "14/25"
+          ],
+          "old_shell": 1
+        },
+        {
+          "p": 3797,
+          "n_over_p": "999/3797",
+          "f": "999/3797",
+          "extra3_after_two_windows": 1,
+          "extra4_after_two_windows": 0,
+          "cell": [
+            "6/23",
+            "5/19"
+          ],
+          "old_shell": 0
+        }
+      ],
+      "actual_gamma3": 30.329718826182486,
+      "actual_gamma4": 30.329512553160242,
+      "denominator_height_per_n": [
+        91.99124902544466,
+        110.95353769050814
+      ]
+    },
+    {
+      "N": 2000,
+      "n": 1999,
+      "window_counts": [
+        103,
+        11
+      ],
+      "minimum_extra": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "residual_after_two_windows_density": [
+        0.008913654477184394,
+        0.003300222962424538
+      ],
+      "residual_primes": [
+        {
+          "p": 733,
+          "n_over_p": "1999/733",
+          "f": "533/733",
+          "extra3_after_two_windows": 0,
+          "extra4_after_two_windows": 1,
+          "cell": [
+            "21/29",
+            "8/11"
+          ],
+          "old_shell": 0
+        },
+        {
+          "p": 1609,
+          "n_over_p": "1999/1609",
+          "f": "390/1609",
+          "extra3_after_two_windows": 1,
+          "extra4_after_two_windows": 0,
+          "cell": [
+            "7/29",
+            "1/4"
+          ],
+          "old_shell": 0
+        },
+        {
+          "p": 34031,
+          "n_over_p": "1999/34031",
+          "f": "1999/34031",
+          "extra3_after_two_windows": 1,
+          "extra4_after_two_windows": 0,
+          "cell": [
+            "1/18",
+            "1/17"
+          ],
+          "old_shell": 0
+        }
+      ],
+      "actual_gamma3": 30.543386743370316,
+      "actual_gamma4": 30.543764305598632,
+      "denominator_height_per_n": [
+        91.91820162812611,
+        110.92420724221765
+      ]
+    },
+    {
+      "N": 4000,
+      "n": 3999,
+      "window_counts": [
+        194,
+        18
+      ],
+      "minimum_extra": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "residual_after_two_windows_density": [
+        0.002544367568705587,
+        0.004345351240472261
+      ],
+      "residual_primes": [
+        {
+          "p": 5591,
+          "n_over_p": "3999/5591",
+          "f": "3999/5591",
+          "extra3_after_two_windows": 0,
+          "extra4_after_two_windows": 1,
+          "cell": [
+            "5/7",
+            "18/25"
+          ],
+          "old_shell": 0
+        },
+        {
+          "p": 6299,
+          "n_over_p": "3999/6299",
+          "f": "3999/6299",
+          "extra3_after_two_windows": 0,
+          "extra4_after_two_windows": 1,
+          "cell": [
+            "12/19",
+            "7/11"
+          ],
+          "old_shell": 0
+        },
+        {
+          "p": 26237,
+          "n_over_p": "3999/26237",
+          "f": "3999/26237",
+          "extra3_after_two_windows": 1,
+          "extra4_after_two_windows": 0,
+          "cell": [
+            "3/20",
+            "2/13"
+          ],
+          "old_shell": 0
+        }
+      ],
+      "actual_gamma3": 30.447396513363696,
+      "actual_gamma4": 30.447659195385388,
+      "denominator_height_per_n": [
+        91.98798091701347,
+        110.98396335880177
+      ]
+    },
+    {
+      "N": 8000,
+      "n": 7999,
+      "window_counts": [
+        361,
+        37
+      ],
+      "minimum_extra": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "residual_after_two_windows_density": [
+        0.0008983803356072416,
+        0.0008983803356072416
+      ],
+      "residual_primes": [
+        {
+          "p": 1321,
+          "n_over_p": "7999/1321",
+          "f": "73/1321",
+          "extra3_after_two_windows": 1,
+          "extra4_after_two_windows": 1,
+          "cell": [
+            "1/19",
+            "1/18"
+          ],
+          "old_shell": 0
+        }
+      ],
+      "actual_gamma3": 30.52516618033906,
+      "actual_gamma4": 30.52604709625532,
+      "denominator_height_per_n": [
+        91.98313910449392,
+        111.00205452376288
+      ]
+    }
+  ]
+}

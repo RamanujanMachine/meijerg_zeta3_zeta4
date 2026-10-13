@@ -1,0 +1,129 @@
+Independent audit of the native readout, baseline, and exact carry chambers
+========================================================================
+
+1. Native generators and an admissible whole-block order
+
+For w=(a0,...,a4;b0,...,b4), the differential polynomial is
+prod(theta-a_i+1)-prod(theta-b_j), of degree4 with leading coefficient
+L=5-sum(a)+sum(b). Along the trajectory L=3. A regular complete block
+path decreases a2,a3,a4 first, increases a0,a1 next, increases b0,b1,
+then decreases b3,b4. Its L stays positive, and the a-b factors needed
+by inverse generators stay nonzero. The native implementation in
+native.py agrees in all16entries, scalar exactly1, with the independently
+cached RT N50 matrix (49trajectory steps).
+
+While only a2,a3,a4 have moved, the differential polynomial has a theta^2
+factor. Consequently e0 theta=0 and e1 theta=e0. For negative lengths
+ell2,ell3,ell4, put S=(-1)^(ell2+ell3+ell4)ell2!ell3!ell4!.
+The whole prefix acts as
+  e0 -> S e0,
+  e1 -> S[e1+(H_ell2+H_ell3+H_ell4)e0].
+This is an exact two-dimensional factorial/harmonic lattice identity.
+
+2. Barnes and rational functionals
+
+The derivation in ../arithmetic/readout_and_baseline.tex passes audit.
+The rational density R_w is the gamma quotient there and has poles of
+order at most2 along the safe path. Polynomial multiplication does not
+increase the pole order. The sums of its double and simple coefficients
+are invariant under integer translation and vanish on polynomials.
+They annihilate the exact translate-difference form of the differential
+polynomial and thus transport as native CMF initial rows. Their initial
+rows are (1,0,0,0) and (0,-1,0,0). This proves Q=(-1)^n W00 and W10=0.
+
+The choice of when to deform the contour matters for the third-order
+periodic kernel. Deform it only after completing all negative-a blocks:
+the resulting rational numerator has triple zeros at integers1..10n.
+Both periodic kernels then permit shifting from (0,1) to (2n,2n+1)
+without residues. Keep the latter contour for every remaining block.
+The differential translate strip is regular because H_w has a triple
+zero at2n; the last b4 factor restores the one zero lost in R_w.
+Moving the contour during negative-b steps instead would cross simple
+poles of K3 R_w and would require explicit residue corrections.
+
+The initial period-integral rows and the endpoint partial-fraction
+readouts have the stated signs. K3=-K2'/2 supplies an independent check
+of the second initial row. The paired15n denominator intervals and
+integer-valued derivative identity yield C_n a_j integral and
+d16n C_n b_j integral, where C_n=(15n)!^2/(10n)!^3. The claimed
+6 C_n d19n^3 normalization for zeta3 and 6 C_n d19n^4 normalization
+for both zeta3,zeta4 follow, including the separate B=0 saving.
+
+3. Farey29 carry chambers and periodic tail
+
+Audited file: ../profiles/exact_chambers.py.
+All y-breakpoint slopes lie in {-12,-11,-10,-2,-1,0,1,2,16,17}.
+Their pairwise crossings in x have reduced denominator at most29.
+The domain endpoints are among the same slopes; the constant-x
+breakpoints15x,10x and1/19 also have denominator at most29. The
+harmonic cutoff y=1-2x is included. Sampling each open y-cell and each
+admissible boundary therefore captures every possible floor signature.
+The exact harmonic rational lp is constant on these signatures.
+
+For p^2>30n, every factorial and harmonic index here is below p^2;
+the high harmonic indices are less than p. Thus an exact rational
+lp=0 establishes cancellation of the leading p^-1 term. If lp!=0,
+allowing the loss of one p remains a valid lower bound even when its
+numerator accidentally vanishes modulo p.
+
+For x>=1, h=l=1 and the double-pole minimum is
+min(s,s+1-loss)=s. Hence the harmonic-zero test drops out entirely.
+Simple-pole terms reduce to b+1. These floor expressions are periodic
+under integer translations of x and y. Every y-domain then has width
+at least1, so it covers all fractional y. This proves the periodic
+tail; it does not rely on a false assertion that harmonic numbers
+themselves are periodic.
+
+Boundary qualification: for an all-n product require p>29 in addition
+to p^2>30n and p not dividing n, or check finitely many small(n,p)
+cases separately. The latter two exclusions alone still permit Farey
+boundary x=n/p for p<=29, e.g.n1,p7. This correction has no density cost.
+
+Independent computations: all5184 eligible prime instances in the
+cached precise profiles n100,500,1000 agree exactly with the continuous
+chamber function. A further34 interior rational samples and17 samples
+translated to period+2 agree. These checks support the audit; the
+finite partition argument above provides the uniform justification.
+
+4. Broad shell 8n<p<11n
+
+Audited ../arithmetic/broad_shell.tex. All five residue ranges and their
+integer endpoints give c(k)-d(k)>=-1, with equality exactly on the
+stated support. There the high-digit numerator roots are (0,0,0)
+and denominator roots (-1,-1,-2,-2), independent of k. The factor
+X^p-X supplies the sign -Q(k), and deg Q=p-2.
+
+The local congruence pF(k+pV)=-Q(k)U(V) modulo p extracts a_j/p and b_j
+as its double and simple coefficients. For off-support residues both
+normalized coefficients reduce to zero. The distinct high-digit nodes
+are p-adically separated: n1 has no eligible prime and n>=2 gives p>=17.
+
+At the two supported nodes j=p-k,2p-k the scaled harmonic residues
+are respectively0 and1. The verified partial fractions of U yield
+constants -8-4/2=-10 and -8-4/3=-28/3. Their sum over k vanishes because
+deg Q<p-1. Consequently v_p(Q_n)>=1, v_p(P3)>=-1, v_p(P4)>=-2.
+Since v_p(C_n)=-1 on (8n,10n) and2 on (10n,11n), the normalized gains
+are1 and4, exactly one above the termwise profile0 and3. The resulting
+additional logarithmic prime density is3. No gap found in this proof.
+
+5. Fourteen shells and their periodic lifts
+
+Audited ../arithmetic/periodic_shells.tex and all_shell_cells.py/json.
+All47accepted Farey cells were independently sampled at two alternative
+rational interior x-values and lifts t=0,1,3, totaling5640 y-cells and
+boundaries. Root counts satisfy h>=-1, and the ten tagged high-root
+interval endpoints have precisely the stated translations. Merging
+only identical endpoint labels yields exactly14intervals and exactly
+the manuscript's table. The fixed endpoints after subtraction of
+epsilon are stronger information than merely equal readout constants;
+they do justify every integer lift.
+
+At a denominator high root l in the translated kernel, the harmonic
+index is exactly-l, because floor((j+2n)/p)=epsilon-(l+epsilon).
+Distinct root separations are at most floor(29n/p)<p, while harmonic
+indices are at most floor(19n/p)<p. Thus the local partial-fraction and
+harmonic coefficients are integral at p under the cutoff p^2>30n.
+The degree p-2 residue polynomial cancels the leading readout at every
+lift. The comparison with the baseline c(f)+1 is correct. The t0 width
+is195197/55440; the positive translated density series and its exact
+finite lower sum are valid. No new gap found.

@@ -1,0 +1,1018 @@
+\documentclass[11pt]{article}
+\usepackage[margin=23mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,booktabs,microtype,hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,urlcolor=blue}
+\newtheorem{theorem}{Theorem}
+\newcommand{\Z}{\mathbb Z}
+\allowdisplaybreaks
+\setlength{\emergencystretch}{2em}
+\title{CMF conservation and the arithmetic of\\$A\zeta(3)+B\zeta(4)$\\\large The trajectory $(16,17,-11,-12,-10;2,1,0,-1,-2)$}
+\author{Improved arithmetic bounds with a second-order trace certificate}
+\date{10 October 2026}
+\begin{document}\maketitle
+\begin{abstract}
+For the specified native MeijerG CMF, we establish a uniform common
+divisor of the two prescribed zeta readouts. Taking their exponential
+growth and approximation-error rates as given, the arithmetic estimate
+implies $\liminf\delta_N>0.01634832$ for every fixed integer pair
+$(A,B)\ne(0,0)$, and $\liminf\delta_N>0.22626234$ when $B=0$.
+The proof uses an admissible reordered CMF path, a rational kernel with
+double poles, an exact prime-carry partition, and a root deformation
+whose trace cancels through second order at selected primes. These bounds do not assert
+that the observed finite-depth deltas are the exact asymptotic values.
+\end{abstract}
+
+\section{The statement and the accepted analytic input}
+Use $\operatorname{MeijerG}(5,2,5,5,1)$ with initial point
+$(1,1,0,0,0;0,0,0,0,0)$ and the direction in the title. Put $n=N-1$,
+exactly matching the user's indexing. The accepted initial-condition
+matrix is
+\[
+ R_{A,B}=\begin{pmatrix}0&0&-6A&3A-2B\\12&0&0&0\end{pmatrix}.
+\]
+In all statements $A,B$ are fixed integers; they do not vary with $N$.
+Let $r_N(A,B)$ be the quotient of the two entries of $R_{A,B}W_ne_0$.
+Its reduced positive denominator is denoted $q_N(A,B)$.
+
+The analytic input, used without reproving it, is
+\[
+ \log|Q_n|=\sigma n+o(n),\qquad
+ \left|\zeta(s)-\frac{P_{s,n}}{Q_n}\right|
+       \le \exp(-En+o(n)),\quad s=3,4,
+\]
+where the exact readouts $Q_n,P_{s,n}$ are identified below and
+\[
+ \sigma=53.287583322620205\ldots,\qquad
+ E=112.807539247454680\ldots .
+\]
+Exact rational isolation and logarithm certificates for the associated
+spectral constants accompany the proof. In particular
+\[
+ \sigma+30\log(3/2)<65.451536565866,\qquad E>112.807539247454.
+\]
+The full limiting matrix also has an eigenvalue $-1$; the selected
+readouts' elimination of that mode is part of the given analytic input.
+The triangle inequality gives the same error upper exponent $E$ for
+every fixed $A\zeta(3)+B\zeta(4)$.
+
+\begin{theorem}
+Under this accepted analytic input, the reduced approximants satisfy
+\[
+ \boxed{\liminf_{N\to\infty}\delta_N(A,B)>0.01634832}
+ \quad\text{for every fixed }(A,B)\in\Z^2\setminus\{(0,0)\}.
+\]
+If $B=0$, the stronger estimate is
+\[
+ \boxed{\liminf_{N\to\infty}\delta_N(A,0)>0.22626234}\qquad(A\ne0).
+\]
+Here $\delta_N=-1-\log|A\zeta(3)+B\zeta(4)-r_N|/\log q_N$ whenever
+$q_N>1$ and the error is nonzero; an exact approximant may equivalently
+be assigned $\delta_N=+\infty$. Fixed rational coefficients have the same
+exponents after multiplication by one fixed denominator.
+\end{theorem}
+
+\section{What multiplication order contributes}
+Conservation identifies products along admissible shifted lattice paths
+with the same endpoints. It does not say that matrices evaluated at a
+single vertex commute. We first decrease $a_2,a_3,a_4$, then increase
+$a_0,a_1$, then increase $b_0,b_1$, and finally decrease $b_3,b_4$.
+This order creates a long interval of triple zeros before the last
+contour shift is needed. It also exposes factorial and harmonic blocks
+that are invisible in an entrywise estimate of the original trajectory
+matrix.
+
+There is no requirement to use the same arithmetic certificate for the
+two initial rows. Nor must one use the same path at different primes.
+For a cut $w$, write $W_n=U_wV_w$. The identity
+\[
+ rW_ne_0=\sum_i(rU_w)_i(V_we_0)_i
+\]
+gives the valid certificate
+\[
+ v_p(rW_ne_0)\ge \min_i v_p\bigl((rU_w)_i(V_we_0)_i\bigr).
+\]
+One may maximize this independently for each $p$ and each initial row.
+For the mixed numerator it is also useful to split
+$r_{A,B}=Ar_3+Br_4$: bounds proved separately for $r_3$ and $r_4$ imply a
+bound for every integer combination. This can be stronger than applying
+one entrywise estimate to the already combined row.
+
+The accompanying exact path experiments demonstrate this freedom in the
+present CMF. They are not the justification for an asymptotic divisor.
+The uniform argument below exposes one convenient rational readout and
+then proves its primewise divisibility directly. It uses the conserving
+family to explain the arithmetic, without claiming that an empirically
+best ordering has been proved optimal.
+
+% Uniform arithmetic readout for MeijerG(5,2,5,5,1).
+% Here n=N-1; no asymptotic analytic assertion is used.
+\section{A rational kernel for the two initial conditions}
+Put $n=N-1\ge0$ and let $W_n$ be the native forward CMF product from
+$(1,1,0,0,0;0,0,0,0,0)$ to
+$(1+16n,1+17n,-11n,-12n,-10n;2n,n,0,-n,-2n)$.
+Define
+\[
+ F_n(t)=\frac{\prod_{u=0}^2(t-(10+u)n)_{10n}}
+ {(t+n)_{16n+1}(t+2n)_{14n+1}}.
+\]
+Its partial fractions are
+\[
+ F_n(t)=\sum_{j=n}^{17n}\left(\frac{a_j}{(t+j)^2}
+                    +\frac{b_j}{t+j}\right),\qquad
+ a_j=0\quad(j<2n\ \hbox{or}\ j>16n).
+\]
+The function is $O(t^{-2})$, so $\sum_jb_j=0$.
+With $H_m^{(s)}=\sum_{k=1}^m k^{-s}$, set
+\begin{align*}
+ Q_n&=\sum_j a_j,\\
+ P_{3,n}&=\sum_j\left(a_jH_{j+2n}^{(3)}+
+                              \frac{b_j}{2}H_{j+2n}^{(2)}\right),\\
+ P_{4,n}&=\sum_j\left(a_jH_{j+2n}^{(4)}+
+                              \frac{b_j}{3}H_{j+2n}^{(3)}\right).
+\end{align*}
+Then the following identities hold uniformly:
+\[
+ Q_n=(-1)^n(W_n)_{00},\qquad (W_n)_{10}=0,
+\]
+\[
+ P_{3,n}=(-1)^n\left(-\frac{(W_n)_{20}}2+
+                              \frac{(W_n)_{30}}4\right),\qquad
+ P_{4,n}=(-1)^n\left(-\frac{(W_n)_{30}}6\right).
+\]
+Consequently the requested approximant is exactly
+$(A P_{3,n}+B P_{4,n})/Q_n$.
+
+\paragraph{Proof by the CMF mechanism.}
+For an integer vertex $w=(a_0,\ldots,a_4;b_0,\ldots,b_4)$ write
+\[
+ R_w(t)=(-1)^{a_0+a_1}
+       \frac{\prod_{j=0}^4\Gamma(t+b_j)}
+            {\prod_{i=0}^4\Gamma(t+a_i)}.
+\]
+On the path used below this is a rational function with poles of order at
+most two, all at integers.  Initially it is $t^{-2}$, and at the endpoint
+it is $(-1)^nF_n(t)$.  The gamma functional equation gives exactly the
+native elementary CMF multipliers when $\theta$ is represented by $-t$.
+To check the companion reduction, put
+$H_w(t)=R_w(t)\prod_j(t+b_j)$.  Then
+\[
+ R_w(t)\prod_i(t+a_i-1)=H_w(t-1).
+\]
+Thus the differential equation reduces to a translate difference of
+$H_w$, up to its immaterial overall sign.
+
+Choose the coordinate-block order: first decrease $a_2,a_3,a_4$ to their
+endpoint values; then increase $a_0,a_1$; then increase $b_0,b_1$; finally
+decrease $b_3,b_4$.  During the first three blocks use a vertical contour
+$c\in(0,1)$.  At their end the rational numerator has zeros of multiplicity
+three at every integer $1,\ldots,10n$, so move the contour to
+$c\in(2n,2n+1)$.  This move crosses no pole for either kernel
+\[
+ K_2(t)=\frac{\pi^2}{\sin^2\pi t},\qquad
+ K_3(t)=\frac{\pi^3\cos\pi t}{\sin^3\pi t}.
+\]
+Use this latter contour for every remaining block.  Initially $H_w$ has
+a zero of order at least three at $0$.  In the later blocks it has one at
+$2n$: the possible loss of one zero when $b_4=-2n$ is restored by the
+factor $t+b_4$ in $H_w$.  Therefore multiplication by either periodic
+kernel and integration annihilates $H_w(t-1)-H_w(t)$.  Horizontal boundary
+integrals vanish by the kernels' exponential decay.  This proves the
+companion relation at every point used by the path; the elementary gamma
+relations prove the edge relations.  Hence these integrals propagate by
+the actual native CMF matrices, without a scalar normalization.
+
+More precisely, the two initial rows of period integrals on the basis
+$((-t)^r/t^2)_{r=0}^3$ are
+\[
+ (2\zeta(3),-\zeta(2),1,-1/2),\qquad
+ (-3\zeta(4),\zeta(3),0,-1/2).
+\]
+The first two entries follow by closing the contour to the right.
+For the last two, $K_2=-\pi(\cot\pi t)'$ gives
+$\int K_2/(2\pi i)=1$; reflection about $1/2$ gives
+$\int tK_2/(2\pi i)=1/2$; and $K_3=-K_2'/2$ gives the second row by
+integration by parts.
+
+There are also two purely rational functionals: the sum of the double-pole
+coefficients and the sum of the simple-pole coefficients.  Both vanish on
+integer translate differences and on polynomials.  Their initial rows are
+$(1,0,0,0)$ and $(0,-1,0,0)$.  They therefore obey the same CMF transport.
+At the endpoint they give $Q_n=(-1)^n(W_n)_{00}$ and $(W_n)_{10}=0$.
+Finally, closing the endpoint contour to the right gives
+\[
+ \int K_2F_n\,\frac{dt}{2\pi i}
+   =-\sum_{k=2n+1}^{\infty}F_n'(k)=2(Q_n\zeta(3)-P_{3,n}),
+\]
+\[
+ \int K_3F_n\,\frac{dt}{2\pi i}
+   =-\frac12\sum_{k=2n+1}^{\infty}F_n''(k)
+   =-3(Q_n\zeta(4)-P_{4,n}).
+\]
+Comparing with the transported rows proves all asserted identities.
+The case $n=0$ is immediate from $W_0=I$ and $F_0=t^{-2}$.
+
+\section{A uniform denominator bound and the special $B=0$ saving}
+Let $d_m=\operatorname{lcm}(1,\ldots,m)$ and, for $n\ge1$, put
+\[
+ C_n=\frac{(15n)!^2}{(10n)!^3}.
+\]
+Then
+\[
+ C_na_j\in\mathbb Z,\qquad d_{16n}C_nb_j\in\mathbb Z.
+\]
+In particular
+\[
+ 6C_nd_{19n}^3(Q_n,P_{3,n})\in\mathbb Z^2,\qquad
+ 6C_nd_{19n}^4(Q_n,P_{3,n},P_{4,n})\in\mathbb Z^3.
+\]
+This removes one entire factor $d_{19n}$ when $B=0$, uniformly in $n$;
+it is not an inference from finite gcd measurements.
+
+\paragraph{Proof.}
+Re-pair the denominator intervals as
+$(t+n)_{15n+1}(t+2n)_{15n+1}$ and write
+\[
+ C_nF_n(t)=P(t)L_n(t)L_{2n}(t),\quad
+ P(t)=\prod_{u=0}^2\binom{t-un-1}{10n},\quad
+ L_c(t)=\frac{(15n)!}{\prod_{j=c}^{c+15n}(t+j)}.
+\]
+Every $L_c$ has integer simple-pole residues
+$(-1)^{j-c}\binom{15n}{j-c}$.
+The polynomial $P$ is integer-valued on integers.  Moreover
+$d_{10n}P'(k)$ is integral at every integer $k$: apply the Newton-basis
+identity
+$\binom{x}{m}'=\sum_{i=1}^m(-1)^{i-1}\binom{x}{m-i}/i$
+to each of its three binomial factors and use the product rule.
+At a common pole the double coefficient is therefore integral, while its
+simple coefficient is a sum of an integer multiple of $P'(-j)$ and
+terms with integer numerator and denominator $j-k$.  At a pole of only one
+factor only the latter kind occurs.  All such differences satisfy
+$0<|j-k|\le16n$.  This proves both coefficient assertions, including the
+simple poles outside the overlap.  Finally $j+2n\le19n$, and the harmonic
+numbers of order $s$ are cleared by $d_{19n}^s$.
+
+\section{Primewise contents of the whole readout}
+We next divide the integer forms by a uniform product of primes. The
+valuation of a sum is bounded after its full factorial and harmonic
+structure has been exposed, rather than after each elementary matrix step.
+Only primes
+\[
+ p>29,\qquad p^2>30n,\qquad p\nmid n
+ \tag{E}
+\]
+are used. The omitted primes affect the logarithmic density by $o(n)$.
+Put $x=n/p$ and $y=j/p$. Since every factorial argument is at most $29n$,
+Legendre's formula has just its first term at these primes.
+Define
+\[
+ T(x,y)=2\lfloor15x\rfloor-3\lfloor10x\rfloor+
+ \sum_{u=0}^2\bigl(\lfloor y+(10+u)x\rfloor-\lfloor y+ux\rfloor\bigr).
+\]
+At a double pole, $2x\le y\le16x$, the exact valuation of $C_na_j$ is
+\[
+ s=T-\lfloor y-x\rfloor-\lfloor y-2x\rfloor
+        -\lfloor16x-y\rfloor-\lfloor17x-y\rfloor.
+ \tag{D}
+\]
+At the two simple-pole ranges it is the valuation of $C_nb_j$ that is
+needed, and it is exactly
+\begin{align*}
+ b_-&=T+\lceil2x-y\rceil-1-\lfloor16x-y\rfloor
+                   -\lfloor y-x\rfloor-\lfloor17x-y\rfloor,
+           &&x\le y<2x,\\
+ b_+&=T+\lceil y-16x\rceil-1-\lfloor y-2x\rfloor
+                   -\lfloor y-x\rfloor-\lfloor17x-y\rfloor,
+           &&16x<y\le17x.
+\end{align*}
+These formulas follow by evaluating the factorial products at each pole.
+The ceilings retain the endpoint correction in factorials of the form
+$(2n-j-1)!$; dropping this correction would invalidate some prime bounds.
+
+For a double pole, $b_j=a_jL_j$, where $L_j$ is a signed sum of reciprocal
+integers. Write $H_m=\sum_{k=1}^m1/k$ and set
+\begin{align*}
+ \ell(x,y)={}&\sum_{u=0}^2\left(H_{\lfloor y+ux\rfloor}
+                           -H_{\lfloor y+(10+u)x\rfloor}\right)\\
+ &+H_{\lfloor y-x\rfloor}+H_{\lfloor y-2x\rfloor}
+  -H_{\lfloor16x-y\rfloor}-H_{\lfloor17x-y\rfloor}.
+\end{align*}
+Indeed, $pL_j$ reduces modulo $p$ to this rational number. All its
+harmonic indices are smaller than $p$, by (E). Thus
+\[
+ v_p(C_nb_j)\ge s-\varepsilon(x,y),\qquad
+ \varepsilon(x,y)=\begin{cases}0&\ell(x,y)=0,\\1&\ell(x,y)\ne0.\end{cases}
+ \tag{LD}
+\]
+The equality test here is an equality in $\mathbb Q$, not a floating-point
+or heuristic congruence test. If $\ell\ne0$ happens to vanish modulo a
+particular prime, ignoring that cancellation is conservative.
+
+Put $l=\mathbf1_{x>1/19}$ and $h=\mathbf1_{y+2x\ge1}$. The elementary
+bound $v_p(H_{j+2n}^{(r)})\ge-rh$ gives the following lower bounds for
+$6C_nd_{19n}^{r}P_{r,n}$, with $r=3,4$:
+\[
+ \begin{array}{c|c}
+ \text{contribution}&\text{valuation lower bound}\\\hline
+ \text{double coefficient times }H^{(r)}&s+rl-rh\\
+ \text{simple coefficient at a double pole}&s-\varepsilon+rl-(r-1)h\\
+ \text{left or right simple pole}&b_\pm+rl-(r-1)h.
+ \end{array}
+ \tag{V}
+\]
+The same minimum also bounds $6C_nd_{19n}^rQ_n$: its corresponding
+valuation is $s+rl$, which is no smaller. Take the minimum over the three
+specified $y$ ranges and then its maximum with zero, using the established
+integer normalization for that last operation. Call the result $g_r(x)$.
+
+\paragraph{An exact finite certificate for all depths.}
+The attached \texttt{profiles/exact\_chambers.py} evaluates (D)--(V)
+using rational arithmetic. Every breakpoint in $y$ is a line $y=m+kx$
+with integer slope between $-12$ and $17$. Two such lines cross only at
+a rational $x$ of reduced denominator at most $29$. The constant-floor
+breakpoints and the harmonic cutoff are included in this list. Therefore
+it suffices to check the $270$ open intervals of the Farey partition of
+order $29$ in $(0,1)$, evaluating both the open $y$ intervals and their
+endpoints. This is a complete finite partition of the formulas, not a
+check at finitely many trajectory depths. Condition (E) prevents $x$ from
+lying on its boundaries.
+
+The output is
+\[
+ g_3(x)=g_4(x)=g(x)=\psi(\{x\})+h_0(x),
+ \tag{G}
+\]
+where $\psi$ is the step function in the appendix and
+\[
+ h_0(x)=
+ \begin{cases}
+ 3,&1/19<x<1/18,\\
+ 2,&1/18<x<1/17,\\
+ 1,&1/17<x<1/16,\\
+ 0,&\text{otherwise}.
+ \end{cases}
+\]
+For $x\ge1$ the harmonic cutoff is always active. In (V) the double-pole
+minimum is then $\min(s,s+1-\varepsilon)=s$, independent of $\ell$.
+The other values are $b_\pm+1$. Each $y$ range has width at least one, and
+these floor expressions are periodic under integral translations of $x$
+and $y$. This proves the periodic tail in (G); no periodicity of the
+harmonic expression $\ell$ is presumed.
+
+It follows that the product of eligible primes $p^{g(n/p)}$ divides both
+integer forms of orders three and four. Prime-dependent choices are
+permitted because divisibility is certified separately in each local
+ring $\mathbb Z_{(p)}$; unique factorization then combines the bounds.
+
+\section{A uniform extra prime factor: $8n<p<11n$}
+For every integer $n\ge1$ and prime $8n<p<11n$, the rational readout just
+constructed satisfies
+\[
+ v_p(Q_n)\ge1,\qquad v_p(P_{3,n})\ge-1,\qquad
+ v_p(P_{4,n})\ge-2.                                      \tag{BS}
+\]
+The termwise harmonic estimates give only $-2$ and $-3$ for the last two
+valuations.  Thus (BS) supplies one additional common factor $p$ for both
+initial conditions, uniformly throughout this entire prime interval.
+This assertion does not require an asymptotic hypothesis or a finite-depth
+extrapolation.
+
+\paragraph{Root multiplicities.}
+Write $F_n=\mathcal N/\mathcal D$ with the monic numerator and denominator
+from its definition.  A numerator root lies in one of the three integer
+intervals $[1,10n]$, $[n+1,11n]$, $[2n+1,12n]$.  A denominator root is the
+negative of an integer in $[n,17n]$ or $[2n,16n]$.
+For $0\le k<p$ let $c(k)$ and $d(k)$ count these roots congruent to $k$,
+with multiplicity.  Direct interval counting gives
+\[
+ c(k)-d(k)\ge-1.
+\]
+Equality holds precisely when
+\[
+ \max(12n-p+1,\,2p-16n)\le k\le p-2n.                  \tag{S}
+\]
+On this support the three numerator roots are all $k$ itself, whereas the
+four denominator roots are $k-p,k-p,k-2p,k-2p$.
+In particular $k>2n$.
+
+Here are details of the count, to make the chamber assertion uniform in
+$n$ and $p$.  In the middle interval $2n<k\le p-2n$, all three roots $k$
+are present, and both denominator roots $k-p$ are present.  There are at
+most two additional denominator roots, both $k-2p$; they are both present
+exactly when $k\ge2p-16n$.  No additional numerator root $k+p$ is present
+exactly when $k>12n-p$.  This proves (S) on the middle interval.
+For $p-2n<k\le p-n$ there are three roots on each side.  For $p-n<k<p$
+there are two or three denominator roots and at least as many numerator
+roots; a third denominator root can occur only when $p<10n$, when all
+three numerator roots $k$ are present.
+For $0\le k\le2n$ the denominator count is
+$2+\mathbf1_{k\ge2p-17n}+\mathbf1_{k\ge2p-16n}$.
+At $k=0$ the assertion follows immediately by comparing $p$ with
+$17n/2$ and $10n$.  For $0<k\le n$, its third root forces $p\le9n$ and
+hence a third numerator root, while its fourth forces $p\le17n/2$ and
+hence a fourth numerator root.  For $n<k\le2n$, these same implications
+are $p\le19n/2$ and $p\le9n$, respectively.  This covers every residue,
+including all integer endpoints.
+
+\paragraph{The local kernel and the cancellation.}
+Reduce the two monic polynomials modulo $p$.  The multiplicity inequality
+implies that
+\[
+ \mathcal Q(X)=(X^p-X)\frac{\overline{\mathcal N}(X)}
+                               {\overline{\mathcal D}(X)}
+             \in\mathbb F_p[X],\qquad \deg\mathcal Q=p-2.
+\]
+At a residue outside (S), $\mathcal Q(k)=0$.  At a residue inside (S),
+substitution $t=k+pV$, cancellation of the factors not divisible by $p$,
+and $(X^p-X)'=-1$ give
+\[
+ pF_n(k+pV)\equiv-\mathcal Q(k)\,
+       \frac{V^3}{(V+1)^2(V+2)^2}\pmod p.               \tag{LK}
+\]
+Outside (S) the left side reduces to zero.  This is an identity of local
+rational functions.  All distinct high-digit roots differ by at most
+four, and hence by a $p$-adic unit: the interval is empty for $n=1$, and
+otherwise $p\ge17$.  It is consequently legitimate to extract the
+partial-fraction coefficients from (LK).  It also shows at every residue
+that $a_j/p$ and $b_j$ are $p$-integral, and that both reduce to zero away
+from the support (S).
+
+On that support, the two nodes in the partial fractions of $F_n$ are
+$j=p-k$ and $j=2p-k$.  Their harmonic indices $j+2n$ lie respectively
+below $p$ and between $p$ and $2p$.  Thus, after multiplying an order-$r$
+harmonic number by $p^r$, their residues modulo $p$ are $0$ and $1$.
+The fixed high-digit kernel is
+\[
+ \frac{V^3}{(V+1)^2(V+2)^2}
+ =-\frac1{(V+1)^2}+\frac5{V+1}
+   -\frac8{(V+2)^2}-\frac4{V+2}.
+\]
+Its harmonic readout constants are therefore $-8-4/2=-10$ for $P_3$ and
+$-8-4/3=-28/3$ for $P_4$.  Summing (LK) over all residues yields
+\[
+ p^2P_{3,n}\equiv10\sum_{k\in\mathbb F_p}\mathcal Q(k)=0\pmod p,
+ \qquad
+ p^3P_{4,n}\equiv\frac{28}{3}
+       \sum_{k\in\mathbb F_p}\mathcal Q(k)=0\pmod p.
+\]
+The last equalities use $\deg\mathcal Q=p-2<p-1$.
+Also $Q_n=\sum a_j\in p\mathbb Z_{(p)}$.  This proves (BS).
+For the normalization $C_n=(15n)!^2/(10n)!^3$, one has
+$v_p(C_n)=-1$ on $(8n,10n)$ and $v_p(C_n)=2$ on $(10n,11n)$.
+Accordingly the common exponent in
+$6C_nd_{19n}^r(Q_n,P_{r,n})$, $r=3,4$, is at least $1$ and $4$ on these
+two intervals, respectively: exactly one more than the baseline local
+coefficient bound.
+
+\section{Fourteen first-order shells and all their periodic lifts}
+Let $\mathcal S\subset(0,1)$ be the union of the fourteen open intervals
+in the first column of the table below.  For every prime $p>29$ with
+$p^2>30n$ and $\{n/p\}\in\mathcal S$, one has
+\[
+ v_p(Q_n)\ge1,\qquad v_p(P_{3,n})\ge-1,\qquad
+ v_p(P_{4,n})\ge-2.                                    \tag{PS}
+\]
+Thus the extra prime divisor may include every such prime, not only those
+in the original shell $8n<p<11n$.  These are first-order divisibility statements. The next section
+proves a further factor on two smaller periodic intervals.
+
+\paragraph{The finite root-count certificate.}
+Put $n/p=t+f$ with $t\in\mathbb Z_{\ge0}$ and $0<f<1$, and write
+$y=k/p$ for a residue $0\le k<p$.  At $t=0$, the three numerator high-root
+intervals have integer endpoints
+\[
+ [\lfloor uf-y\rfloor+1,\ \lfloor(u+10)f-y\rfloor],\quad u=0,1,2,
+\]
+and the two denominator intervals have endpoints
+\[
+ [\lceil-17f-y\rceil,\ \lfloor-f-y\rfloor],\qquad
+ [\lceil-16f-y\rceil,\ \lfloor-2f-y\rfloor].
+\]
+Let $h$ be the total numerator count minus the total denominator count,
+and put $\epsilon_0=\lfloor2f-y\rfloor$.
+For every $f\in\mathcal S$ away from Farey walls of order $29$ (in particular, every admissible $f=\{n/p\}$), the following two assertions hold:
+$h\ge-1$ at every residue; and wherever $h=-1$, subtracting $\epsilon_0$
+from every one of the ten endpoints yields the single row of the table
+corresponding to $f$.  Notation $[L,U]$ includes every integer from $L$ to
+$U$ with multiplicity; overlapping intervals retain their multiplicities.
+\[
+\begin{array}{c|ccc|cc}
+ f\text{ interval}&N_0&N_1&N_2&D_0&D_1\\\hline
+ (1/11,1/8)&[1,1]&[1,1]&[1,1]&[-1,0]&[-1,0]\\
+ (3/13,4/17)&[0,1]&[0,2]&[1,2]&[-4,-1]&[-4,-1]\\
+ (3/11,5/18)&[0,2]&[0,2]&[1,2]&[-5,-1]&[-4,-1]\\
+ (4/13,5/16)&[0,2]&[1,3]&[1,3]&[-5,-1]&[-5,-1]\\
+ (4/11,7/19)&[0,3]&[1,3]&[1,4]&[-6,-1]&[-6,-1]\\
+ (5/13,7/18)&[1,3]&[1,4]&[1,4]&[-6,-1]&[-6,-1]\\
+ (5/12,8/19)&[0,3]&[1,4]&[1,4]&[-7,-1]&[-7,-2]\\
+ (5/11,8/17)&[0,3]&[0,4]&[1,4]&[-8,-2]&[-8,-2]\\
+ (6/11,9/16)&[0,4]&[0,5]&[1,5]&[-10,-2]&[-9,-2]\\
+ (7/12,10/17)&[-1,4]&[0,5]&[1,5]&[-11,-2]&[-10,-3]\\
+ (7/11,11/17)&[-1,5]&[0,5]&[1,6]&[-12,-2]&[-11,-3]\\
+ (7/10,12/17)&[-1,5]&[0,6]&[1,7]&[-13,-2]&[-12,-3]\\
+ (8/11,11/15)&[-1,5]&[0,6]&[1,7]&[-13,-3]&[-13,-3]\\
+ (10/11,16/17)&[-1,7]&[0,8]&[1,9]&[-17,-3]&[-16,-4]
+\end{array}
+\]
+This finite table can be verified entirely with rational arithmetic.
+All changes of an endpoint occur on a line
+$y=mf+c$, with $m\in\{0,1,2,10,11,12,-1,-2,-16,-17\}$ and integer $c$.
+The crossing abscissas in $(0,1)$ therefore have reduced denominator at
+most $29$.  Partition the $f$-axis by the Farey sequence of order $29$;
+there are $270$ open cells.  At the midpoint of each, test every
+$y$-boundary and every intervening open interval, including $y=0$ and
+excluding $y=1$.  The root data are constant on each tested cell, so this
+finite verification proves the table, rather than testing selected
+values of $n$.  The supplied certificate checks all $5400$ such cells
+and boundaries; $47$ of the Farey cells form the fourteen displayed
+intervals.  A missing Farey boundary cannot occur for $f=\{n/p\}$ when
+$p>29$; its reduced denominator would have to be $p$.
+
+\paragraph{Why the same table proves every lift.}
+Changing $f$ to $t+f$ adds $30t$ numerator roots and $30t$ denominator
+roots at every residue.  Hence $h$ and its minimal support are unchanged.
+Also $\epsilon=\lfloor2(t+f)-y\rfloor=2t+\epsilon_0$.
+For a table entry $N_u=[L_u,U_u]$, the high-root interval after subtracting
+$\epsilon$ is
+\[
+ [(u-2)t+L_u,\ (u+8)t+U_u].
+\]
+For $D_0=[L_3,U_3]$ and $D_1=[L_4,U_4]$ it is respectively
+\[
+ [-19t+L_3,-3t+U_3],\qquad[-18t+L_4,-4t+U_4].
+\]
+These five intervals depend only on $t$ and the table row, and are
+independent of the residue $k$ on the entire minimal support.  Let
+$U_t(V)$ be the monic rational function having these numerator and
+denominator roots.  It has degree $-1$.
+
+As in the broad-shell proof,
+$\mathcal Q=(X^p-X)\overline{\mathcal N}/\overline{\mathcal D}$ is a
+polynomial of degree $p-2$.  At a minimal-support residue the local
+factorization is
+\[
+ pF_n\bigl(k+p(V+\epsilon)\bigr)
+       \equiv-\mathcal Q(k)U_t(V)\pmod p;
+\]
+outside that support its reduction is zero.  Distinct high roots differ
+by at most $\lfloor29n/p\rfloor<p$, so all local partial-fraction
+operations have $p$-integral coefficients.  A denominator root $l$ of
+$U_t$ has harmonic index $-l$ after extracting the multiples of $p$ from
+$H_{j+2n}^{(r)}$.  These indices are at most $19n/p<p$, so their harmonic
+numbers are $p$-integral too.  The resulting leading local readout is
+therefore a constant depending on $t$ and the table row, multiplied by
+$\mathcal Q(k)$.  The sum over $k$ vanishes since
+$\deg\mathcal Q<p-1$.  This proves (PS) for every periodic lift.
+
+The normalization valuation
+$c(f)=2\lfloor15f\rfloor-3\lfloor10f\rfloor$ is unchanged by the lift.
+On the table intervals the baseline profile is exactly $c(f)+1$ for both
+readouts, including every lifted interval; (PS) raises it to $c(f)+2$.
+The same rational certificate checks these equalities against the
+baseline chamber table.
+
+\paragraph{Arithmetic density.}
+If
+\[
+ H_n^*=\prod_{\substack{p>29,\ p^2>30n\\\{n/p\}\in\mathcal S}}p,
+\]
+then the prime number theorem gives
+\[
+ \lim_{n\to\infty}\frac{\log H_n^*}{n}
+ =\sum_{(a,b)\subset\mathcal S}\sum_{t=0}^{\infty}
+      \left(\frac1{t+a}-\frac1{t+b}\right).
+\]
+The discarded primes have logarithmic total $o(n)$.  All terms are
+positive.  At $t=0$ the exact sum is $195197/55440$; summing only
+$t=0,\ldots,999$ gives the exact rational lower bound recorded by the
+certificate, and in particular
+\[
+ \liminf_{n\to\infty}\frac{\log H_n^*}{n}
+       >3.6747281958.
+\]
+Thus the previously certified baseline density $26.2366642995$ improves
+to a certified density greater than $29.9113924953$.
+
+
+\section{A second-order trace identity}
+The following elementary deformation lemma supplies the extra prime
+factor that a first-order finite-field sum cannot detect.
+
+\paragraph{Trace lemma.}
+Let $p$ be an odd prime, and let $F(z)$ be a monic rational function of
+degree $-2$, all of whose numerator and denominator roots are integers.
+Assume that its poles have order at most two.  Choose a complete set
+$\mathcal R$ of integer representatives modulo $p$, with pairwise
+differences prime to $p$, and write every root uniquely as $k+p\ell$,
+$k\in\mathcal R$.  At residue $k$, let $N_k,D_k$ be the multisets of these
+high roots $\ell$, and put
+\[
+ h_k=|N_k|-|D_k|,\quad
+ U_k(V)=\frac{\prod_{\ell\in N_k}(V-\ell)}
+                  {\prod_{\ell\in D_k}(V-\ell)},\quad
+ \sigma_k=\sum_{N_k}\ell-\sum_{D_k}\ell.
+\]
+Suppose:
+\begin{enumerate}
+\item $h_k\ge-1$ for all $k$;
+\item at every residue with $h_k=-1$, the function $U_k$ is the same
+      rational function $U$;
+\item at every residue with $h_k=0$, one has $U_k(V)=(V-a_k)U(V)$ for an
+      integer $a_k$;
+\item all nonzero differences of distinct high roots used in the local
+      partial fractions are prime to $p$.
+\end{enumerate}
+Then, as a local rational function of $V$,
+\[
+       p\sum_{k\in\mathcal R}F(k+pV)\equiv0\pmod {p^2}.       \tag{T2}
+\]
+In particular, every double-pole and simple-pole coefficient at an
+integral high pole of this trace is divisible by $p^2$.
+
+\paragraph{Proof.}
+Introduce an independent deformation parameter $P$: replace every root
+$k+p\ell$ by $k+P\ell$, retaining its multiplicity and its numerator or
+denominator status.  Denote the resulting rational function by $F_P(z)$.
+It is monic of degree $-2$ for every $P$.  At $P=0$,
+\[
+ F_0(z)=\frac{\widetilde Q(z)}{H(z)},\quad
+ H(z)=\prod_{k\in\mathcal R}(z-k),\quad
+ \widetilde Q(z)=\prod_{k\in\mathcal R}(z-k)^{h_k+1},
+ \quad\deg\widetilde Q=p-2.
+\]
+For $h_k=-1$, write
+\[
+ F_0(z)=\frac{L_k}{z-k}+L_k A_k+O(z-k),\qquad
+ A_k=\sum_{s\ne k}\frac{h_s}{k-s}.
+\]
+For $h_k=0$, put $L_k=F_0(k)$.  All these quantities are $p$-integral.
+Also put $B_k=\sum_{s\ne k}\sigma_s/(k-s)$.
+Let $\sigma_*$ be the common value of $\sigma_k$ on the minimal classes;
+it is fixed by $U$.  The affine-factor hypothesis implies
+$\sigma_k=\sigma_*+a_k$ whenever $h_k=0$.
+
+The ordinary residue theorem applied to the proper rational functions
+$F_0$ and
+\[
+ \left.\frac{\partial F_P}{\partial P}\right|_{P=0}
+       =-F_0(z)\sum_s\frac{\sigma_s}{z-s}
+\]
+gives the exact identities
+\[
+ \sum_{h_k=-1}L_k=0,\qquad
+ \sum_{h_k=-1}L_k(B_k+\sigma_*A_k)
+       +\sum_{h_k=0}\sigma_kL_k=0.                    \tag{RI}
+\]
+The second function has degree at most $-3$ at infinity, so no residue
+there is omitted.
+
+Expand the deformed trace locally in $P$.  The minimal classes contribute
+\[
+ P F_P(k+PV)=L_kU(V)\{1+P(VA_k-B_k)\}+O(P^2),
+\]
+the classes $h_k=0$ contribute $P L_kU_k(V)+O(P^2)$, and all other classes
+contribute $O(P^2)$.  By (RI), the constant term of the trace is zero and
+its linear coefficient simplifies exactly to
+\[
+ U(V)(V+\sigma_*)\,D,\qquad
+ D=\sum_{h_k=-1}L_kA_k+\sum_{h_k=0}L_k.                 \tag{D}
+\]
+Modulo $p$, $H(z)=z^p-z$, so $H'=-1$ and $H''=0$.
+At a minimal class, $L_kA_k\equiv-\widetilde Q'(k)$; at a class with
+$h_k=0$, $L_k\equiv-\widetilde Q'(k)$; and at every other class this
+polynomial derivative vanishes.  Consequently
+\[
+ D\equiv-\sum_{k\in\mathbb F_p}\widetilde Q'(k)=0\pmod p,
+\]
+since $\deg\widetilde Q'=p-3<p-1$.
+Substituting $P=p$ proves (T2).  The expansions have $p$-integral
+coefficients because distinct residue representatives differ by units;
+extraction of their local principal parts is valid by the last hypothesis.
+This also proves the assertion about pole coefficients.
+
+\section{Application to the Meijer--G rational kernel}
+Apply the lemma to
+\[
+ F_n(z)=\frac{\prod_{u=0}^2(z-(10+u)n)_{10n}}
+                  {(z+n)_{16n+1}(z+2n)_{14n+1}},
+\]
+with $p>29$, $p^2>30n$, and representatives $1,\ldots,p$.
+Write $n/p=t+f$.  The hypotheses of the trace lemma hold throughout the
+following two fractional intervals, for every $t\ge0$:
+\[
+              \frac1{10}<f<\frac2{19},\qquad
+              \frac{11}{12}<f<\frac{15}{16}.           \tag{S2}
+\]
+Here is the complete affine root data, before shifting the harmonic
+cutoff.  Each interval denotes all integer high roots, with multiplicity.
+\begingroup\small\setlength{\arraycolsep}{3.5pt}
+\[
+\begin{array}{c|ccc|cc}
+ f&N_0&N_1&N_2&D_0&D_1\\\hline
+ (1/10,2/19)
+ &[0,10t]&[t,11t]&[2t,12t]
+ &[-17t-2,-t-1]&[-16t-2,-2t-1]\\
+ (11/12,15/16)
+ &[0,10t+8]&[t+1,11t+9]&[2t+2,12t+10]
+ &[-17t-16,-t-2]&[-16t-15,-2t-3]
+\end{array}
+\]
+\endgroup
+These are the common high-root intervals in the minimal classes
+$h_k=-1$.  For the first row every $h_k=0$ quotient $U_k/U$ is one of
+\[
+                    V+16t+2,\qquad V+2t+1.
+\]
+For the second row it is one of
+\[
+                    V-(2t+1),\qquad V-(10t+9),\qquad V+17t+16.
+\]
+Which of the last three possibilities occurs depends on the Farey cell;
+every possibility is affine, which is all the lemma requires.
+At the residue zero one has $h_k=1$, so replacing its representative $0$
+by $p$ does not change any minimal or zero class in the table.
+
+The accompanying exact certificate verifies this table on all $5400$
+cells and boundary strata of the Farey-$29$ arrangement.  Exactly nine
+of its $270$ open abscissa cells satisfy the criterion, and their union is
+(S2).  To certify all lifts, the code treats each high-root endpoint as
+an affine function of the symbolic integer $t$.  For every zero class it
+subtracts its numerator/denominator root multiplicities from the common
+minimal data.  The signed interval-boundary multiset reduces to $+1$ at
+$a(t)$ and $-1$ at $a(t)+1$, proving $U_k/U=V-a(t)$ identically for every
+integer $t\ge0$.  No numerical values of $t$ are used to infer this
+identity.  As before, an excluded Farey boundary cannot occur when
+$p>29$.  Distinct denominator high poles differ by at most $16n/p+1<p$:
+indeed $p^2>30n$ and $p>29$ imply
+$16n/p+1<16p/30+1<p$.  Thus the local principal-part
+extractions use only unit differences.
+
+\paragraph{The stronger arithmetic readouts.}
+Write the partial fractions of $F_n$ as
+$\sum_j(a_j/(z+j)^2+b_j/(z+j))$.
+For every integral high pole $\ell$, collect the corresponding
+coefficients as $A_\ell$ and $B_\ell$.  Its double-pole and simple-pole
+coefficients in the trace are $A_\ell/p$ and $B_\ell$.  Therefore (T2)
+gives
+\[
+               A_\ell\in p^3\mathbb Z_{(p)},\qquad
+               B_\ell\in p^2\mathbb Z_{(p)}.           \tag{PB}
+\]
+In particular $Q_n=\sum_\ell A_\ell\in p^3\mathbb Z_{(p)}$.
+
+Choose $\eta=p\lceil2n/p\rceil$.  This lies in $[2n,10n]$: on the first
+unlifted interval it is $p$, on the second it is $2p$, and for $t\ge1$ it
+is less than $3n$.  The exact readout is unchanged by using this cutoff,
+because $F_n',F_n''$ vanish at every integer $2n+1,\ldots,10n$.
+If $-j=k+p\ell$, $1\le k\le p$, then
+\[
+ \left\lfloor\frac{j+\eta}{p}\right\rfloor
+                 =\lceil2n/p\rceil-\ell-1,
+\]
+which is independent of $k$.  Moreover $j+\eta\le27n<p^2$.
+The condition $h_k\ge-1$, together with the separation of high poles,
+also gives the individual bounds $a_j\in p\mathbb Z_{(p)}$ and
+$b_j\in\mathbb Z_{(p)}$.  After multiplying the order-$r$ readout by
+$p^{r-1}$, its terms whose harmonic denominators are prime to $p$
+therefore vanish modulo $p^2$.
+The remaining terms are sums of $A_\ell/p$ and $B_\ell$ with
+$p$-integral harmonic weights.  By (PB), they vanish modulo $p^2$ too.
+Thus, uniformly throughout both intervals and all their periodic lifts,
+\[
+ \boxed{\ v_p(Q_n)\ge3,\qquad v_p(P_{3,n})\ge0,\qquad
+                              v_p(P_{4,n})\ge-1\ }.    \tag{SG}
+\]
+This is one additional common prime factor beyond the first-order shell
+bound, for both the pure $\zeta(3)$ row and every fixed combination
+$A\zeta(3)+B\zeta(4)$.
+
+\section{The improved divisor and its density}
+Let $\mathcal T=(1/10,2/19)\cup(11/12,15/16)$, and let
+$G_n^{\rm old}$ be the divisor from the baseline carry profile and the
+fourteen first-order shells. Define
+\[
+ J_n=\prod_{\substack{p>29,\ p^2>30n,\ p\nmid n\\
+                  \{n/p\}\in\mathcal T}}p,
+ \qquad G_n^{\rm new}=G_n^{\rm old}J_n.
+\]
+The second-order argument proves an additional factor at each of these
+primes, simultaneously for both normalizations. Indeed, on these cells
+the baseline exponent is $c+1$, the first-order exponent is $c+2$, and
+(SG) gives $c+3$, where $c=2\lfloor15n/p\rfloor-3\lfloor10n/p\rfloor$.
+Thus no existing prime factor has been counted twice. We have
+\[
+ \frac{6C_nd_{19n}^3}{G_n^{\rm new}}(Q_n,P_{3,n})\in\mathbb Z^2,
+ \qquad
+ \frac{6C_nd_{19n}^4}{G_n^{\rm new}}(Q_n,P_{3,n},P_{4,n})
+     \in\mathbb Z^3.                                      \tag{I2}
+\]
+The two rows can use different lcm powers because their harmonic orders
+differ. The primewise argument also chooses the cutoff
+$\eta=p\lceil2n/p\rceil$ separately for each prime. These are equal
+readouts of the same conserving family, so the different choices do not
+change the approximant.
+
+For an interval $0<a<b\le1$, put
+\[
+ \mathcal D(a,b)=\sum_{t=0}^{\infty}
+             \left(\frac1{t+a}-\frac1{t+b}\right).
+\]
+The prime number theorem and the bounded profiles give the density
+\[
+ \gamma_{\rm new}=\gamma_{\rm old}
+       +\mathcal D(1/10,2/19)+\mathcal D(11/12,15/16).
+\]
+Small excluded primes contribute $O(\sqrt n)$ to $\log G_n$; prime
+divisors of $n$ contribute $O(\log n)$. For any fixed number of periods
+the prime number theorem evaluates the finite sum. The remaining
+periods involve only $p\le n/K$ and have density $O(1/K)$, which
+justifies passage to the whole series.
+
+The omitted tails can also be enclosed without numerical integration.
+For $f(t)=(t+a)^{-1}-(t+b)^{-1}$, convexity gives
+\[
+ \log\frac{K+b}{K+a}+\frac{f(K)}2
+ \le\sum_{t=K}^{\infty}f(t)
+ \le\log\frac{K-\frac12+b}{K-\frac12+a}.
+\]
+At $K=1000$, enclosing each logarithm by its positive atanh series with
+an exact rational remainder gives
+\[
+\begin{aligned}
+ \gamma_{\rm old}&>29.9127079828158127,\\
+ \mathcal D(1/10,2/19)&>0.5075180069435895,\\
+ \mathcal D(11/12,15/16)&>0.0383212540460914.
+\end{aligned}
+\]
+The complete rational lower certificate is
+\[
+ \gamma_{\rm new}\ge
+ \frac{30458547243805493774844991}{10^{24}}
+ >30.45854724380549>30.45854724.                         \tag{DEN}
+\]
+
+\section{Consequences for reduced denominators and delta}
+For $B=0$ use the first integer form in (I2); for $B\ne0$ use the
+second. The reduced denominator divides its integer denominator.
+Since $\log C_n=30n\log(3/2)+o(n)$ and
+$\log d_{19n}=19n+o(n)$, the accepted growth estimate and (DEN) imply
+\[
+\begin{array}{c|c|c}
+\text{readout}&\limsup\log q_N/n\text{ is less than}
+             &\liminf\delta_N\\\hline
+B=0,\ A\ne0&91.992989325866&>0.22626234\\
+B\ne0&110.992989325866&>0.01634832
+\end{array}
+\]
+For example, combining the error exponent $E>112.807539247454$
+with either displayed height bound $H$ gives $\liminf\delta_N\ge E/H-1$;
+exact rational cross-multiplication verifies the stated decimals.
+All factors depending only on the fixed coefficients $A,B$ have zero
+exponential cost. This proves the result stated at the beginning.
+It is a bound on this approximation sequence, not an upper bound on an
+irrationality measure.
+
+\section{Numerical comparison and verification}
+The previous arithmetic bounds were $0.2190118$ for pure $\zeta(3)$
+and $0.0113626$ for the joint readout. The new factors improve them to
+$0.22626234$ and $0.01634832$, respectively, without changing the
+trajectory or initial-condition matrix.
+
+Here are actual reduced-denominator deltas, evaluated with Arb twice
+at each depth using two precisions differing by 100 decimal digits:
+\[
+\begin{array}{r|rr}
+N&\delta_N(1,0)&\delta_N(1,1)\\\hline
+1000&0.226270805823&0.016685345951\\
+2000&0.227250300699&0.016967611459\\
+4000&0.226324705427&0.016428111403\\
+8000&0.226391177278&0.016262704080
+\end{array}
+\]
+Finite-depth oscillations can put a value below an asymptotic lower
+bound. These data do not identify the exact limiting delta. Fits to the
+last three depths give $0.22615555$ and $0.01603797$; the fitted error
+exponents agree with the accepted value $112.80753924745\ldots$.
+
+The two new windows pass 843 eligible prime instances at
+$n=49,99,249,499,999,1999,3999,7999$. The complete forms (I2) and
+reduced-denominator divisibility were checked additionally at
+$n=1,2,3,10$, for each pair
+$(1,0),(0,1),(1,1),(1,-1),(2,3),(-7,5)$.
+Two independently written exact arrangement checks find the same nine
+cells and prove their integer lifts symbolically. These finite numerical
+tests supplement the uniform trace argument; they do not establish it.
+
+The result does not certify an optimal gcd. At $n=7999$ the remaining
+eligible joint surplus outside this profile consists only of the prime
+$1321$, with logarithmic density $\log(1321)/7999\approx0.00089838$.
+No further uniform factor is inferred from that isolated residue.
+\paragraph{Related arithmetic methods.}
+The elementary denominator argument has a direct precedent in
+W.~Zudilin, \emph{Well-poised hypergeometric service for Diophantine problems
+of zeta values}, Journal de Th\'eorie des Nombres de Bordeaux
+15 (2003), 593--626, especially equations (14)--(16):
+\url{https://www.numdam.org/item/JTNB_2003__15_2_593_0.pdf}.
+There the basic ingredients are integer-valued binomial polynomials,
+their derivatives after lcm multiplication, and factorial-normalized
+reciprocal blocks with integer residues. These ingredients justify the
+baseline arithmetic above; they do not automatically supply the stronger
+common divisor needed for this particular trajectory.
+
+C.~Krattenthaler and T.~Rivoal's \emph{Hyperg\'eom\'etrie et fonction z\^eta de
+Riemann}, Memoirs of the AMS 186 (2007), no.~875,
+\url{https://arxiv.org/abs/math/0311114}, develops stronger denominator
+results using hypergeometric identities. Its general theme is relevant,
+but no theorem from that paper is being asserted to apply to this exact
+parameter set without checking its hypotheses.
+
+For current qualitative context, Li Lai's preprint
+\emph{The linear independence of $1$, $\zeta(3)$, and $\zeta(4)$},
+submitted 5 October 2026,
+\url{https://arxiv.org/abs/2610.06838}, states precisely that linear
+independence result. Lemma 2.2 uses double- and simple-pole coefficients
+and harmonic terms of orders two through four, closely matching the
+readout structure here. Its method uses determinants and residue-class
+arithmetic. We have checked the statement and relevant formulas, not
+independently audited its full proof; this work makes no novelty claim
+for the qualitative irrationality of every fixed mixed combination.
+
+\appendix
+\section{The exact periodic carry table}
+The function $\psi$ is zero at rational endpoints (these primes are
+excluded by (E)); on each open interval it has the value below.
+For every other $x$, equation (G) determines the full baseline exponent.
+\begin{center}\small
+\begin{tabular}{ccc@{\qquad}ccc}\toprule
+$a$&$b$&$\psi$&$a$&$b$&$\psi$\\\midrule
+
+$0$&$1/15$&$0$&$3/5$&$2/3$&$1$\\[0pt]
+
+$1/15$&$1/13$&$1$&$2/3$&$11/16$&$3$\\[0pt]
+
+$1/13$&$1/12$&$2$&$11/16$&$9/13$&$2$\\[0pt]
+
+$1/12$&$1/10$&$3$&$9/13$&$7/10$&$3$\\[0pt]
+
+$1/10$&$2/15$&$0$&$7/10$&$11/15$&$0$\\[0pt]
+
+$2/15$&$2/13$&$1$&$11/15$&$14/19$&$2$\\[0pt]
+
+$2/13$&$3/17$&$2$&$14/19$&$3/4$&$1$\\[0pt]
+
+$3/17$&$2/11$&$1$&$3/4$&$4/5$&$2$\\[0pt]
+
+$2/11$&$1/5$&$2$&$4/5$&$13/16$&$1$\\[0pt]
+
+$1/5$&$4/15$&$1$&$13/16$&$9/11$&$0$\\[0pt]
+
+$4/15$&$5/17$&$3$&$9/11$&$16/19$&$1$\\[0pt]
+
+$5/17$&$3/10$&$2$&$16/19$&$13/15$&$0$\\[0pt]
+
+$3/10$&$1/3$&$0$&$13/15$&$7/8$&$2$\\[0pt]
+
+$1/3$&$2/5$&$2$&$7/8$&$15/17$&$3$\\[0pt]
+
+$2/5$&$7/15$&$1$&$15/17$&$9/10$&$2$\\[0pt]
+
+$7/15$&$9/19$&$3$&$9/10$&$14/15$&$0$\\[0pt]
+
+$9/19$&$1/2$&$2$&$14/15$&$17/18$&$2$\\[0pt]
+
+$1/2$&$8/15$&$0$&$17/18$&$18/19$&$1$\\[0pt]
+
+$8/15$&$7/13$&$1$&$18/19$&$1$&$0$\\[0pt]
+
+$7/13$&$3/5$&$2$&&&\\[0pt]
+
+\bottomrule\end{tabular}\end{center}
+\section{Reproducible certificates}
+The bundle preserves the \texttt{work/} and \texttt{results/} layout.
+Run the following from its root, using Python with \texttt{python-flint}
+and \texttt{sympy} installed:
+\begin{verbatim}
+python work/meijerg5255_arithmetic/profiles/exact_chambers.py
+python work/meijerg5255_arithmetic/profiles/certify_density.py
+python work/meijerg5255_arithmetic/arithmetic/all_shell_cells.py
+python work/meijerg5255_arithmetic/verify_certificate.py
+python work/meijerg5255_arithmetic/rates/certify_spectral_constants.py
+\end{verbatim}
+
+The improved package adds the following checks, also run from its root:
+\begin{verbatim}
+python work/meijerg5255_improved/arithmetic/second_order_certificate.py
+python work/meijerg5255_improved/audit/independent_affine_chambers.py
+python work/meijerg5255_improved/residuals/infinite_density.py
+python work/meijerg5255_improved/residuals/final_bound_certificate.py
+python work/meijerg5255_improved/verify_improved.py
+python work/meijerg5255_improved/residuals/measure_delta.py
+\end{verbatim}
+The last command reuses the included exact native-column checkpoints.
+To regenerate them, use \texttt{residuals/profile.py} with the desired
+depths; its CMF reconstruction uses \texttt{ramanujantools}.
+
+The chamber and density checks themselves use only Python's standard
+library and exact fractions. Native multiplication uses rational Flint
+matrices. The scripts do not require the archive notebooks.
+\end{document}

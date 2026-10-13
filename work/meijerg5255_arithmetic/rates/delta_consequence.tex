@@ -1,0 +1,46 @@
+\paragraph{Explicit asymptotic delta bounds.}
+The exact chamber certificate gives the common-divisor density lower bound
+\[
+ \gamma_{\mathrm{base}}
+ \ge\frac{26236664299512325943}{10^{18}}>26.2366.
+\]
+It sums 188003 positive terms over 270 exact chambers and the first 1000
+periods, rounding every term downward. The omitted terms are nonnegative.
+The fourteen additional shell bands, including their integer lifts in $n/p$,
+contribute at least
+\[
+ \gamma_{\mathrm{extra}}
+ \ge\frac{3674728195806186818}{10^{18}}>3.674728195806.
+\]
+This is a second downward-rounded sum, of 47000 positive terms. Thus
+\[
+ \gamma_{\mathrm{total}}
+ \ge\frac{29911392495318512761}{10^{18}}>29.91139,
+\]
+and it is safe to use $\gamma=29.91139$.
+Together with the accepted analytic rates, the certified outward-rounded
+constants give
+\[
+\begin{array}{c|cc|c}
+ &\sigma&\tau&\liminf_{N\to\infty}\delta_N\\\hline
+ B=0, A\ne0
+ &92.540146565866&20.267392681589
+ &\displaystyle\ge\frac{20267392681589}{92540146565866}>0.2190118\\[3pt]
+ B\ne0
+ &111.540146565866&1.267392681589
+ &\displaystyle\ge\frac{1267392681589}{111540146565866}>0.0113626.
+\end{array}
+\]
+Here $\sigma$ bounds the exponential height of the supplied integer pair,
+and $\tau$ bounds the exponential decay of its linear form.
+Reducing the pair can only strengthen these delta bounds: if
+$(\widetilde P_N,\widetilde Q_N)=g_N(P_N,Q_N)$ with $g_N\ge1$, then
+\[
+ \delta_N=-1-\frac{\log|\alpha-P_N/Q_N|}{\log Q_N}
+ \ge\frac{\tau N+o(N)}{\log Q_N}
+ \ge\frac\tau\sigma+o(1).
+\]
+All fixed rational coefficients are included after multiplication by a fixed
+common denominator. This conclusion concerns the asymptotic quality of
+these approximants. It does not assert an irrationality-measure upper bound,
+which would require additional appropriate nonvanishing and spacing input.

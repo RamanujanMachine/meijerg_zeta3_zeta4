@@ -1,0 +1,98 @@
+Status: NUMERICAL_CANDIDATE for stored numerical diagnostics.
+
+The exact spectral-constant certificate and the final numerical consequence
+are not extrapolated from finite gcds. The final delta arithmetic uses the
+separately supplied uniform chamber profile, uniform fourteen-band periodic-shell lemma, and
+accepted analytic height/error rates. No irrationality-measure upper bound
+is asserted by this package.
+
+Certified numerical consequence:
+  base prime density >=26236664299512325943/10^18;
+  periodic extra density >=3674728195806186818/10^18;
+  combined density >=29911392495318512761/10^18 >29.91139.
+  Safe gamma=29.91139.
+  B=0: sigma=92.540146565866, tau=20.267392681589,
+       liminf delta >=20267392681589/92540146565866 >.2190118.
+  B!=0: sigma=111.540146565866, tau=1.267392681589,
+       liminf delta >=1267392681589/111540146565866 >.0113626.
+
+Independent all-shell audit:
+  270 rational x chambers, 5400 open/boundary y strata, 47 selected cells.
+  Fourteen bands; first-period density exactly195197/55440.
+  Tagged endpoints are independent of y after subtraction of epsilon.
+  Exact floor translation proves this for every integer period, not only
+  sampled periods. No high-digit collision for p>29 and p^2>30n.
+  The normalized common exponent is exactly one beyond the supplied baseline
+  in every selected cell and each of its lifts. No double counting.
+  The written audit is all_shell_audit.tex; its independent finite checker
+  all_shell_audit.py passed and saved all_shell_audit.json.
+
+The exact limiting matrix has eigenvalue-1, one positive rootLambda, and a
+complex pair with modulus rho. Certified constants:
+  logLambda=53.2875833226202052673540...;
+  logrho=-59.5199559248344750721436...;
+  relevant accepted error exponent E=112.8075392474546803394976... .
+The special zeta readouts eliminate the-1 mode. This rate applicability is an
+accepted analytic input, not a consequence of merely listing matrix roots.
+For C15=(15n)!²/(10n)!³, h<65.451536565866,b<-47.356002681589.
+
+Exact finite arithmetic observations:
+  Used cached N50,100,250,500; n=N-1.
+  Primitive triple (P3,P4,Q) always had gcd(P4,Q)=1.
+  Pure3 content advantage D3 had logD3/N=18.5469,18.8974,18.9720,19.0164.
+  AtN500 D3/lcm(1..19n)=3/(2*47*331).
+  All tested normalized integer pairs/triples were integral.
+  Every residual gcd completely factored into primes<=50n.
+  Relative to the initial coarse termwise bounds, every sampled prime
+  8n<p<11n gains+1;339 prime instances tested. The55 instances in
+  9.5n<p<10n gain an additional1. Root's later precise profile supersedes
+  the coarse baseline; do not add inferred gains without checking overlap.
+  Additional candidate bands are recorded in window_probe.json.
+
+Files inspected:
+  work/meijerg5255_z3_z4_readout/reproduce.py;
+  results/meijerg5255_z3_z4_readout/readout_check.json andfour matrix files;
+  work/meijerg5255_arithmetic/profiles/finite_profile.py,exact_chambers.py;
+  results/meijerg5255_arithmetic/profiles/exact_chambers.json;
+  work/meijerg5255_arithmetic/arithmetic/broad_shell.tex,high_kernel.py,
+  shell_chamber_certificate.py,all_shell_cells.py,all_shell_cells.json.
+Primary literature inspected:
+  Zudilin2003, Well-poised hypergeometric service...(equations14-16);
+  Krattenthaler-Rivoal2007, Hypergeometrie...(abstract);
+  Li Lai2026, arXiv2610.06838 (statement anddouble-pole Lemma2.2).
+
+Files created:
+  work/meijerg5255_arithmetic/rates/: inspect_exact.py,baseline_ceiling.py,
+  spectral_rates.py,certify_spectral_constants.py,compare_profiles.py,
+  window_probe.py,final_bound_certificate.py,rate_framework.tex,
+  delta_consequence.tex,literature_context.tex,all_shell_audit.py,
+  all_shell_audit.tex.
+  Results counterpart: exact_content.json,baseline_ceiling.json,
+  spectral_rates.json,spectral_constant_certificate.json,
+  profile_49.json,profile_99.json,profile_249.json,profile_499.json,
+  profile_comparison.json,window_probe.json,final_bound_certificate.json,
+  all_shell_audit.json,REPORT.txt.
+
+Experiments recovered:
+  Native forward4x4 column0 readout; exact gcd separation betweenB=0andB!=0;
+  factorial/lcm normalizations; independent broad-shell residual diagnosis;
+  exact leading matrix and outward logarithmic constants.
+Top recovered finite delta values:
+  Pure3: .232543552639 atN100; .227778715469 atN500.
+  Pure4: .019604207210 atN100; .016856308736 atN500.
+  Mixed1,1: .019597876219 atN100; .016853279170 atN500.
+No new high-precision delta run was needed or performed.
+Rejected/unstable:
+  Sympy generic nroots failed numerically on the widely separated roots;
+  replaced by exact root isolation and rational constant/log certificates.
+  Finite gcd ceilings and unexplained bands are not uniform divisibility claims.
+Numerical uncertainties:
+  The remaining measured gcd factors can include sporadic factors. Old coarse
+  window_probe.json gains have been superseded by the precise profile and
+  fourteen periodic shells; they must not be added again.
+Recommended next search region:
+  Compare exact gcds at N=250,500,1000 to the final precise profile plus the
+  fourteen periodic indicators, retaining p>29 and p^2>30n. Prioritize residue
+  fractions {n/p} in (1/8,3/13) and (4/17,3/11), and higher valuation gains
+  inside the selected bands. These are proposed experiments, not additional
+  uniform divisibility conclusions.

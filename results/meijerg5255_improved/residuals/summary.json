@@ -1,0 +1,314 @@
+[
+  {
+    "status": "NUMERICAL_CANDIDATE",
+    "N": 50,
+    "n": 49,
+    "normalization": "C15=(15n)!^2/(10n)!^3; user raw rows; 6 C15 d19n^r",
+    "actual_gamma3": 29.96659502283601,
+    "actual_gamma4": 29.908834454798736,
+    "eligible_gamma": [
+      27.908296066103166,
+      27.81181876368046
+    ],
+    "certificate_finite_density": [
+      27.35311292915567,
+      27.35311292915567
+    ],
+    "eligible_residual_density": [
+      0.5551831369474926,
+      0.45870583452478875
+    ],
+    "second_order_band_residual_density": [
+      0.37767946894208987,
+      0.37767946894208987
+    ],
+    "residual_outside_second_order_density": [
+      0.17750366800540268,
+      0.08102636558269888
+    ],
+    "qjoint_log": 5428.875591957573,
+    "q3_log": 4501.532025539947,
+    "q4_log": 5428.875591957573,
+    "pure4_advantage": "1",
+    "remaining3": "1",
+    "remaining4": "1",
+    "raw_Q_log": 2602.1407770865876,
+    "C_log": 592.4227493516976,
+    "D_log": 924.5132985837996,
+    "seconds": 0.004699916986282915,
+    "scope": "Exact finite residual common factors beyond the existing uniform divisor; no new uniform shell inferred."
+  },
+  {
+    "status": "NUMERICAL_CANDIDATE",
+    "N": 100,
+    "n": 99,
+    "normalization": "C15=(15n)!^2/(10n)!^3; user raw rows; 6 C15 d19n^r",
+    "actual_gamma3": 31.028208534973928,
+    "actual_gamma4": 31.014571546292288,
+    "eligible_gamma": [
+      29.455984525144487,
+      29.455001707861793
+    ],
+    "certificate_finite_density": [
+      28.872372539855228,
+      28.872372539855228
+    ],
+    "eligible_residual_density": [
+      0.5836119852892624,
+      0.5826291680065667
+    ],
+    "second_order_band_residual_density": [
+      0.48573209972081044,
+      0.48573209972081044
+    ],
+    "residual_outside_second_order_density": [
+      0.09787988556845191,
+      0.09689706828575631
+    ],
+    "qjoint_log": 10950.662947894289,
+    "q3_log": 9060.917988305831,
+    "q4_log": 10950.662947894289,
+    "pure4_advantage": "1",
+    "remaining3": "1",
+    "remaining4": "1",
+    "raw_Q_log": 5265.465275779315,
+    "C_log": 1200.2689048927873,
+    "D_log": 1888.3948977089735,
+    "seconds": 0.005882458994165063,
+    "scope": "Exact finite residual common factors beyond the existing uniform divisor; no new uniform shell inferred."
+  },
+  {
+    "status": "NUMERICAL_CANDIDATE",
+    "N": 250,
+    "n": 249,
+    "normalization": "C15=(15n)!^2/(10n)!^3; user raw rows; 6 C15 d19n^r",
+    "actual_gamma3": 30.735419279898483,
+    "actual_gamma4": 30.69064835670661,
+    "eligible_gamma": [
+      29.838366674542108,
+      29.794696671454837
+    ],
+    "certificate_finite_density": [
+      29.19203981848478,
+      29.19203981848478
+    ],
+    "eligible_residual_density": [
+      0.6463268560573268,
+      0.6026568529700579
+    ],
+    "second_order_band_residual_density": [
+      0.5319525999919815,
+      0.5319525999919815
+    ],
+    "residual_outside_second_order_density": [
+      0.11437425606534514,
+      0.07070425297807635
+    ],
+    "qjoint_log": 27568.888748363635,
+    "q3_log": 22825.87874365761,
+    "q4_log": 27568.888748363635,
+    "pure4_advantage": "1",
+    "remaining3": "1",
+    "remaining4": "1",
+    "raw_Q_log": 13257.219441019866,
+    "C_log": 3024.4008093694924,
+    "D_log": 4731.8620448312495,
+    "seconds": 0.01510424999287352,
+    "scope": "Exact finite residual common factors beyond the existing uniform divisor; no new uniform shell inferred."
+  },
+  {
+    "status": "NUMERICAL_CANDIDATE",
+    "N": 500,
+    "n": 499,
+    "normalization": "C15=(15n)!^2/(10n)!^3; user raw rows; 6 C15 d19n^r",
+    "actual_gamma3": 30.761844444286385,
+    "actual_gamma4": 30.780375107350473,
+    "eligible_gamma": [
+      30.074237491178586,
+      30.085864982912806
+    ],
+    "certificate_finite_density": [
+      29.575425987138328,
+      29.575425987138328
+    ],
+    "eligible_residual_density": [
+      0.49881150404025665,
+      0.5104389957744795
+    ],
+    "second_order_band_residual_density": [
+      0.4764916516047725,
+      0.4764916516047725
+    ],
+    "residual_outside_second_order_density": [
+      0.0223198524354841,
+      0.0339473441697069
+    ],
+    "qjoint_log": 55355.32777735617,
+    "q3_log": 45847.11732121894,
+    "q4_log": 55355.32777735617,
+    "pure4_advantage": "1",
+    "remaining3": "1",
+    "remaining4": "1",
+    "raw_Q_log": 26578.072596903683,
+    "C_log": 6065.041571526307,
+    "D_log": 9517.45725700621,
+    "seconds": 0.03543045901460573,
+    "scope": "Exact finite residual common factors beyond the existing uniform divisor; no new uniform shell inferred."
+  },
+  {
+    "status": "NUMERICAL_CANDIDATE",
+    "N": 1000,
+    "n": 999,
+    "normalization": "C15=(15n)!^2/(10n)!^3; user raw rows; 6 C15 d19n^r",
+    "actual_gamma3": 30.329718826182486,
+    "actual_gamma4": 30.329512553160242,
+    "eligible_gamma": [
+      29.818288600699468,
+      29.81677179944262
+    ],
+    "certificate_finite_density": [
+      29.281351326512286,
+      29.281351326512286
+    ],
+    "eligible_residual_density": [
+      0.5369372741871804,
+      0.5354204729303312
+    ],
+    "second_order_band_residual_density": [
+      0.49643587212903345,
+      0.49643587212903345
+    ],
+    "residual_outside_second_order_density": [
+      0.04050140205814697,
+      0.038984600801297786
+    ],
+    "qjoint_log": 110842.58415281764,
+    "q3_log": 91899.25777641921,
+    "q4_log": 110842.58415281764,
+    "pure4_advantage": "1",
+    "remaining3": "1",
+    "remaining4": "1",
+    "raw_Q_log": 53220.823062620664,
+    "C_log": 12146.671132737976,
+    "D_log": 18943.12030964921,
+    "seconds": 0.08440441696438938,
+    "scope": "Exact finite residual common factors beyond the existing uniform divisor; no new uniform shell inferred."
+  },
+  {
+    "status": "NUMERICAL_CANDIDATE",
+    "N": 2000,
+    "n": 1999,
+    "normalization": "C15=(15n)!^2/(10n)!^3; user raw rows; 6 C15 d19n^r",
+    "actual_gamma3": 30.543386743370316,
+    "actual_gamma4": 30.543764305598632,
+    "eligible_gamma": [
+      30.19308013294157,
+      30.18746670142681
+    ],
+    "certificate_finite_density": [
+      29.638969552519622,
+      29.638969552519622
+    ],
+    "eligible_residual_density": [
+      0.5541105804219513,
+      0.548497148907191
+    ],
+    "second_order_band_residual_density": [
+      0.4990734269073081,
+      0.4990734269073081
+    ],
+    "residual_outside_second_order_density": [
+      0.055037153514643215,
+      0.049423721999883
+    ],
+    "qjoint_log": 221737.49027719308,
+    "q3_log": 183744.4850546241,
+    "q4_log": 221737.49027719308,
+    "pure4_advantage": "1",
+    "remaining3": "1",
+    "remaining4": "1",
+    "raw_Q_log": 106507.36592760214,
+    "C_log": 24310.277559159855,
+    "D_log": 37993.75996946339,
+    "seconds": 0.22204554203199223,
+    "scope": "Exact finite residual common factors beyond the existing uniform divisor; no new uniform shell inferred."
+  },
+  {
+    "status": "NUMERICAL_CANDIDATE",
+    "N": 4000,
+    "n": 3999,
+    "normalization": "C15=(15n)!^2/(10n)!^3; user raw rows; 6 C15 d19n^r",
+    "actual_gamma3": 30.447396513363696,
+    "actual_gamma4": 30.447659195385388,
+    "eligible_gamma": [
+      30.208686035296108,
+      30.210487018967875
+    ],
+    "certificate_finite_density": [
+      29.6619581289771,
+      29.6619581289771
+    ],
+    "eligible_residual_density": [
+      0.5467279063190043,
+      0.548528889990771
+    ],
+    "second_order_band_residual_density": [
+      0.49962797029545225,
+      0.49962797029545225
+    ],
+    "residual_outside_second_order_density": [
+      0.04709993602355204,
+      0.04890091969531868
+    ],
+    "qjoint_log": 443824.8694718483,
+    "q3_log": 367859.9356871369,
+    "q4_log": 443824.8694718483,
+    "pure4_advantage": "1",
+    "remaining3": "1",
+    "remaining4": "1",
+    "raw_Q_log": 213081.49248377339,
+    "C_log": 48637.837350487374,
+    "D_log": 75965.98425011612,
+    "seconds": 0.6044951660442166,
+    "scope": "Exact finite residual common factors beyond the existing uniform divisor; no new uniform shell inferred."
+  },
+  {
+    "status": "NUMERICAL_CANDIDATE",
+    "N": 8000,
+    "n": 7999,
+    "normalization": "C15=(15n)!^2/(10n)!^3; user raw rows; 6 C15 d19n^r",
+    "actual_gamma3": 30.52516618033906,
+    "actual_gamma4": 30.52604709625532,
+    "eligible_gamma": [
+      30.35133517354527,
+      30.35133517354527
+    ],
+    "certificate_finite_density": [
+      29.805353889988496,
+      29.805353889988496
+    ],
+    "eligible_residual_density": [
+      0.5459812835567749,
+      0.5459812835567749
+    ],
+    "second_order_band_residual_density": [
+      0.49710358996481124,
+      0.49710358996481124
+    ],
+    "residual_outside_second_order_density": [
+      0.0488776935919636,
+      0.0488776935919636
+    ],
+    "qjoint_log": 887905.4341355793,
+    "q3_log": 735773.1296968468,
+    "q4_log": 887905.4341355793,
+    "pure4_advantage": "1",
+    "remaining3": "1",
+    "remaining4": "1",
+    "raw_Q_log": 426230.7858693681,
+    "C_log": 97293.30368910186,
+    "D_log": 152139.3508851466,
+    "seconds": 1.8199384579784237,
+    "scope": "Exact finite residual common factors beyond the existing uniform divisor; no new uniform shell inferred."
+  }
+]

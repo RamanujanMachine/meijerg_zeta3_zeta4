@@ -1,0 +1,191 @@
+\section{A second-order trace identity}
+The following elementary deformation lemma supplies the extra prime
+factor that a first-order finite-field sum cannot detect.
+
+\paragraph{Trace lemma.}
+Let $p$ be an odd prime, and let $F(z)$ be a monic rational function of
+degree $-2$, all of whose numerator and denominator roots are integers.
+Assume that its poles have order at most two.  Choose a complete set
+$\mathcal R$ of integer representatives modulo $p$, with pairwise
+differences prime to $p$, and write every root uniquely as $k+p\ell$,
+$k\in\mathcal R$.  At residue $k$, let $N_k,D_k$ be the multisets of these
+high roots $\ell$, and put
+\[
+ h_k=|N_k|-|D_k|,\quad
+ U_k(V)=\frac{\prod_{\ell\in N_k}(V-\ell)}
+                  {\prod_{\ell\in D_k}(V-\ell)},\quad
+ \sigma_k=\sum_{N_k}\ell-\sum_{D_k}\ell.
+\]
+Suppose:
+\begin{enumerate}
+\item $h_k\ge-1$ for all $k$;
+\item at every residue with $h_k=-1$, the function $U_k$ is the same
+      rational function $U$;
+\item at every residue with $h_k=0$, one has $U_k(V)=(V-a_k)U(V)$ for an
+      integer $a_k$;
+\item all nonzero differences of distinct high roots used in the local
+      partial fractions are prime to $p$.
+\end{enumerate}
+Then, as a local rational function of $V$,
+\[
+       p\sum_{k\in\mathcal R}F(k+pV)\equiv0\pmod {p^2}.       \tag{T2}
+\]
+In particular, every double-pole and simple-pole coefficient at an
+integral high pole of this trace is divisible by $p^2$.
+
+\paragraph{Proof.}
+Introduce an independent deformation parameter $P$: replace every root
+$k+p\ell$ by $k+P\ell$, retaining its multiplicity and its numerator or
+denominator status.  Denote the resulting rational function by $F_P(z)$.
+It is monic of degree $-2$ for every $P$.  At $P=0$,
+\[
+ F_0(z)=\frac{\widetilde Q(z)}{H(z)},\quad
+ H(z)=\prod_{k\in\mathcal R}(z-k),\quad
+ \widetilde Q(z)=\prod_{k\in\mathcal R}(z-k)^{h_k+1},
+ \quad\deg\widetilde Q=p-2.
+\]
+For $h_k=-1$, write
+\[
+ F_0(z)=\frac{L_k}{z-k}+L_k A_k+O(z-k),\qquad
+ A_k=\sum_{s\ne k}\frac{h_s}{k-s}.
+\]
+For $h_k=0$, put $L_k=F_0(k)$.  All these quantities are $p$-integral.
+Also put $B_k=\sum_{s\ne k}\sigma_s/(k-s)$.
+Let $\sigma_*$ be the common value of $\sigma_k$ on the minimal classes;
+it is fixed by $U$.  The affine-factor hypothesis implies
+$\sigma_k=\sigma_*+a_k$ whenever $h_k=0$.
+
+The ordinary residue theorem applied to the proper rational functions
+$F_0$ and
+\[
+ \left.\frac{\partial F_P}{\partial P}\right|_{P=0}
+       =-F_0(z)\sum_s\frac{\sigma_s}{z-s}
+\]
+gives the exact identities
+\[
+ \sum_{h_k=-1}L_k=0,\qquad
+ \sum_{h_k=-1}L_k(B_k+\sigma_*A_k)
+       +\sum_{h_k=0}\sigma_kL_k=0.                    \tag{RI}
+\]
+The second function has degree at most $-3$ at infinity, so no residue
+there is omitted.
+
+Expand the deformed trace locally in $P$.  The minimal classes contribute
+\[
+ P F_P(k+PV)=L_kU(V)\{1+P(VA_k-B_k)\}+O(P^2),
+\]
+the classes $h_k=0$ contribute $P L_kU_k(V)+O(P^2)$, and all other classes
+contribute $O(P^2)$.  By (RI), the constant term of the trace is zero and
+its linear coefficient simplifies exactly to
+\[
+ U(V)(V+\sigma_*)\,D,\qquad
+ D=\sum_{h_k=-1}L_kA_k+\sum_{h_k=0}L_k.                 \tag{D}
+\]
+Modulo $p$, $H(z)=z^p-z$, so $H'=-1$ and $H''=0$.
+At a minimal class, $L_kA_k\equiv-\widetilde Q'(k)$; at a class with
+$h_k=0$, $L_k\equiv-\widetilde Q'(k)$; and at every other class this
+polynomial derivative vanishes.  Consequently
+\[
+ D\equiv-\sum_{k\in\mathbb F_p}\widetilde Q'(k)=0\pmod p,
+\]
+since $\deg\widetilde Q'=p-3<p-1$.
+Substituting $P=p$ proves (T2).  The expansions have $p$-integral
+coefficients because distinct residue representatives differ by units;
+extraction of their local principal parts is valid by the last hypothesis.
+This also proves the assertion about pole coefficients.
+
+\section{Application to the Meijer--G rational kernel}
+Apply the lemma to
+\[
+ F_n(z)=\frac{\prod_{u=0}^2(z-(10+u)n)_{10n}}
+                  {(z+n)_{16n+1}(z+2n)_{14n+1}},
+\]
+with $p>29$, $p^2>30n$, and representatives $1,\ldots,p$.
+Write $n/p=t+f$.  The hypotheses of the trace lemma hold throughout the
+following two fractional intervals, for every $t\ge0$:
+\[
+              \frac1{10}<f<\frac2{19},\qquad
+              \frac{11}{12}<f<\frac{15}{16}.           \tag{S2}
+\]
+Here is the complete affine root data, before shifting the harmonic
+cutoff.  Each interval denotes all integer high roots, with multiplicity.
+\begingroup\small\setlength{\arraycolsep}{3.5pt}
+\[
+\begin{array}{c|ccc|cc}
+ f&N_0&N_1&N_2&D_0&D_1\\\hline
+ (1/10,2/19)
+ &[0,10t]&[t,11t]&[2t,12t]
+ &[-17t-2,-t-1]&[-16t-2,-2t-1]\\
+ (11/12,15/16)
+ &[0,10t+8]&[t+1,11t+9]&[2t+2,12t+10]
+ &[-17t-16,-t-2]&[-16t-15,-2t-3]
+\end{array}
+\]
+\endgroup
+These are the common high-root intervals in the minimal classes
+$h_k=-1$.  For the first row every $h_k=0$ quotient $U_k/U$ is one of
+\[
+                    V+16t+2,\qquad V+2t+1.
+\]
+For the second row it is one of
+\[
+                    V-(2t+1),\qquad V-(10t+9),\qquad V+17t+16.
+\]
+Which of the last three possibilities occurs depends on the Farey cell;
+every possibility is affine, which is all the lemma requires.
+At the residue zero one has $h_k=1$, so replacing its representative $0$
+by $p$ does not change any minimal or zero class in the table.
+
+The accompanying exact certificate verifies this table on all $5400$
+cells and boundary strata of the Farey-$29$ arrangement.  Exactly nine
+of its $270$ open abscissa cells satisfy the criterion, and their union is
+(S2).  To certify all lifts, the code treats each high-root endpoint as
+an affine function of the symbolic integer $t$.  For every zero class it
+subtracts its numerator/denominator root multiplicities from the common
+minimal data.  The signed interval-boundary multiset reduces to $+1$ at
+$a(t)$ and $-1$ at $a(t)+1$, proving $U_k/U=V-a(t)$ identically for every
+integer $t\ge0$.  No numerical values of $t$ are used to infer this
+identity.  As before, an excluded Farey boundary cannot occur when
+$p>29$.  Distinct denominator high poles differ by at most $16n/p+1<p$:
+indeed $p^2>30n$ and $p>29$ imply
+$16n/p+1<16p/30+1<p$.  Thus the local principal-part
+extractions use only unit differences.
+
+\paragraph{The stronger arithmetic readouts.}
+Write the partial fractions of $F_n$ as
+$\sum_j(a_j/(z+j)^2+b_j/(z+j))$.
+For every integral high pole $\ell$, collect the corresponding
+coefficients as $A_\ell$ and $B_\ell$.  Its double-pole and simple-pole
+coefficients in the trace are $A_\ell/p$ and $B_\ell$.  Therefore (T2)
+gives
+\[
+               A_\ell\in p^3\mathbb Z_{(p)},\qquad
+               B_\ell\in p^2\mathbb Z_{(p)}.           \tag{PB}
+\]
+In particular $Q_n=\sum_\ell A_\ell\in p^3\mathbb Z_{(p)}$.
+
+Choose $\eta=p\lceil2n/p\rceil$.  This lies in $[2n,10n]$: on the first
+unlifted interval it is $p$, on the second it is $2p$, and for $t\ge1$ it
+is less than $3n$.  The exact readout is unchanged by using this cutoff,
+because $F_n',F_n''$ vanish at every integer $2n+1,\ldots,10n$.
+If $-j=k+p\ell$, $1\le k\le p$, then
+\[
+ \left\lfloor\frac{j+\eta}{p}\right\rfloor
+                 =\lceil2n/p\rceil-\ell-1,
+\]
+which is independent of $k$.  Moreover $j+\eta\le27n<p^2$.
+The condition $h_k\ge-1$, together with the separation of high poles,
+also gives the individual bounds $a_j\in p\mathbb Z_{(p)}$ and
+$b_j\in\mathbb Z_{(p)}$.  After multiplying the order-$r$ readout by
+$p^{r-1}$, its terms whose harmonic denominators are prime to $p$
+therefore vanish modulo $p^2$.
+The remaining terms are sums of $A_\ell/p$ and $B_\ell$ with
+$p$-integral harmonic weights.  By (PB), they vanish modulo $p^2$ too.
+Thus, uniformly throughout both intervals and all their periodic lifts,
+\[
+ \boxed{\ v_p(Q_n)\ge3,\qquad v_p(P_{3,n})\ge0,\qquad
+                              v_p(P_{4,n})\ge-1\ }.    \tag{SG}
+\]
+This is one additional common prime factor beyond the first-order shell
+bound, for both the pure $\zeta(3)$ row and every fixed combination
+$A\zeta(3)+B\zeta(4)$.

@@ -1,0 +1,337 @@
+[
+  {
+    "A_B": [
+      1,
+      0
+    ],
+    "prime_adaptation_gain": "27753269578870012826865738015901732810484597505357094938332007285121790993622797336686672871310860186921915352558321760622045187849627655355018580428789986897052686036807051100085463857530398223902287209511072255209405180541000",
+    "row_adaptation_gain": "1",
+    "row_adaptation_gain_factorization": {},
+    "row_witnesses": [],
+    "prime_witnesses": [
+      {
+        "primes": [
+          2,
+          3
+        ],
+        "optimal_common": [
+          -25,
+          -11
+        ],
+        "first_path": "negative2_positive2_lower3",
+        "second_path": "negative4_positive3_lower2",
+        "first_bounds": [
+          [
+            -25,
+            -1
+          ],
+          [
+            -16,
+            -2
+          ]
+        ],
+        "second_bounds": [
+          [
+            -32,
+            0
+          ],
+          [
+            -11,
+            2
+          ]
+        ],
+        "complete_maximizing_sets_disjoint": true
+      }
+    ]
+  },
+  {
+    "A_B": [
+      0,
+      1
+    ],
+    "prime_adaptation_gain": "2035036081497114999837935914190364879586028466574402007712",
+    "row_adaptation_gain": "1",
+    "row_adaptation_gain_factorization": {},
+    "row_witnesses": [],
+    "prime_witnesses": [
+      {
+        "primes": [
+          2,
+          3
+        ],
+        "optimal_common": [
+          -31,
+          -18
+        ],
+        "first_path": "negative3_positive0_lower0",
+        "second_path": "negative2_positive1_lower2",
+        "first_bounds": [
+          [
+            -31,
+            10
+          ],
+          [
+            -23,
+            5
+          ]
+        ],
+        "second_bounds": [
+          [
+            -38,
+            -6
+          ],
+          [
+            -18,
+            1
+          ]
+        ],
+        "complete_maximizing_sets_disjoint": true
+      }
+    ]
+  },
+  {
+    "A_B": [
+      1,
+      1
+    ],
+    "prime_adaptation_gain": "235079138245168149501434502445933584977861367911068520244360000",
+    "row_adaptation_gain": "1",
+    "row_adaptation_gain_factorization": {},
+    "row_witnesses": [],
+    "prime_witnesses": [
+      {
+        "primes": [
+          2,
+          3
+        ],
+        "optimal_common": [
+          -31,
+          -18
+        ],
+        "first_path": "negative3_positive0_lower0",
+        "second_path": "negative2_positive1_lower2",
+        "first_bounds": [
+          [
+            -31,
+            10
+          ],
+          [
+            -23,
+            5
+          ]
+        ],
+        "second_bounds": [
+          [
+            -38,
+            -6
+          ],
+          [
+            -18,
+            1
+          ]
+        ],
+        "complete_maximizing_sets_disjoint": true
+      }
+    ]
+  },
+  {
+    "A_B": null,
+    "prime_adaptation_gain": "235079138245168149501434502445933584977861367911068520244360000",
+    "row_adaptation_gain": "4183",
+    "row_adaptation_gain_factorization": {
+      "47": 1,
+      "89": 1
+    },
+    "row_witnesses": [
+      {
+        "prime": 47,
+        "best_same_path": -5,
+        "best_separate_rows": -4,
+        "row_maxima": [
+          -4,
+          -4,
+          0
+        ],
+        "choices": [
+          {
+            "row": 0,
+            "path": "negative1_positive1_lower1",
+            "direction_to_cut": [
+              160,
+              170,
+              -110,
+              -120,
+              -100,
+              20,
+              10,
+              0,
+              -10,
+              -20
+            ],
+            "bounds": [
+              -4,
+              -5,
+              -1
+            ]
+          },
+          {
+            "row": 1,
+            "path": "negative1_positive0_lower0",
+            "direction_to_cut": [
+              0,
+              0,
+              -110,
+              -120,
+              -100,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "bounds": [
+              -5,
+              -4,
+              0
+            ]
+          },
+          {
+            "row": 2,
+            "path": "negative1_positive0_lower0",
+            "direction_to_cut": [
+              0,
+              0,
+              -110,
+              -120,
+              -100,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "bounds": [
+              -5,
+              -4,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "prime": 89,
+        "best_same_path": -4,
+        "best_separate_rows": -3,
+        "row_maxima": [
+          -2,
+          -3,
+          1
+        ],
+        "choices": [
+          {
+            "row": 0,
+            "path": "negative1_positive0_lower0",
+            "direction_to_cut": [
+              0,
+              0,
+              -110,
+              -120,
+              -100,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "bounds": [
+              -2,
+              -4,
+              1
+            ]
+          },
+          {
+            "row": 1,
+            "path": "negative2_positive0_lower0",
+            "direction_to_cut": [
+              0,
+              0,
+              -220,
+              -240,
+              -200,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "bounds": [
+              -4,
+              -3,
+              1
+            ]
+          },
+          {
+            "row": 2,
+            "path": "negative1_positive0_lower0",
+            "direction_to_cut": [
+              0,
+              0,
+              -110,
+              -120,
+              -100,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "bounds": [
+              -2,
+              -4,
+              1
+            ]
+          }
+        ]
+      }
+    ],
+    "prime_witnesses": [
+      {
+        "primes": [
+          2,
+          3
+        ],
+        "optimal_common": [
+          -31,
+          -18
+        ],
+        "first_path": "negative3_positive0_lower0",
+        "second_path": "negative2_positive1_lower2",
+        "first_bounds": [
+          [
+            -25,
+            -31,
+            10
+          ],
+          [
+            -16,
+            -23,
+            5
+          ]
+        ],
+        "second_bounds": [
+          [
+            -32,
+            -38,
+            -6
+          ],
+          [
+            -14,
+            -18,
+            1
+          ]
+        ],
+        "complete_maximizing_sets_disjoint": true
+      }
+    ]
+  }
+]

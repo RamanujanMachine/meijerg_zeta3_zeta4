@@ -1,0 +1,28 @@
+\paragraph{The exact terminating hypergeometric target.}
+The double-pole coefficient at $j=2n$ is
+\[
+ a_{2n}=(-1)^n\frac{(12n)!(13n)!}
+ {(2n)!(3n)!(4n)!n!(15n)!}.
+\]
+Taking the ratio of consecutive double-pole coefficients gives directly
+\[
+ Q_n=a_{2n}\,{}_5F_4\left(
+ \begin{matrix}-14n,-15n,12n+1,13n+1,14n+1\\
+ n+1,2n+1,3n+1,4n+1\end{matrix};1\right).
+\]
+The series terminates at $14n$ and is balanced: the sum of lower
+parameters minus the sum of upper parameters is $1$.
+This is a precise transformation target, but not itself an improved
+divisibility formula for the two harmonic readouts.
+
+Dauguet--Zudilin, \emph{On simultaneous diophantine approximations to
+$\zeta(2)$ and $\zeta(3)$}, equation (31), uses a Whipple transformation
+whose ${}_5F_4$ side contains a half-spaced upper pair $f/2,(f+1)/2$ and
+a matching lower half-pair. The present upper parameters have no such
+pair for positive integer $n$, so that identity has no direct
+specialization to this sum. Likewise the Andrews identity used in
+Zudilin, \emph{Binomial sums related to rational approximations to
+$\zeta(4)$}, starts with a very-well-poised series; no valid specialization
+to the present balanced ${}_5F_4$ was identified in this search.
+Sources: \url{https://arxiv.org/abs/1401.5322} and
+\url{https://arxiv.org/abs/math/0311196}.

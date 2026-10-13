@@ -1,0 +1,101 @@
+MEIJERG ZETA(3)/ZETA(4): ARITHMETIC PROOF AND EXACT CERTIFICATES
+
+Result
+------
+Taking the user's initial conditions and exponential growth/error estimates
+as analytic inputs, the uniform arithmetic argument gives:
+  every fixed integer pair (A,B)!=(0,0): liminf delta_N > 0.0113626;
+  B=0, A!=0:                           liminf delta_N > 0.2190118.
+These are sequence-delta bounds for reduced denominators. No upper bound
+on an irrationality measure is claimed. Exact-error-zero cases can be
+assigned delta=+infinity; no independent nonvanishing or linear-independence
+claim is inferred from the arithmetic proof alone.
+
+The proof is meijerg_zeta3_zeta4_arithmetic.tex / .pdf (11 pages).
+Its main arithmetic statement, with n=N-1, is
+  6 C_n d_(19n)^3 (Q_n,P3_n)/G_n integral;
+  6 C_n d_(19n)^4 (Q_n,P3_n,P4_n)/G_n integral;
+  C_n=(15n)!^2/(10n)!^3, liminf log(G_n)/n > 29.9113924953.
+The displayed delta bounds use the conservative density 29.91139.
+
+1. Files inspected
+------------------
+AGENTS.md; prior work/meijerg5255_z3_z4_readout/reproduce.py;
+results/meijerg5255_z3_z4_readout/{readout_check.json,REPORT.txt,matrix_N*.json};
+installed ramanujantools CMF, DFinite and MeijerG implementations;
+results/zeta2_order_adaptive/zeta2_adaptive_orders_addendum.tex and its
+native exact order-certificate scripts. Primary references checked include
+Zudilin (2003), Krattenthaler-Rivoal (2007), and Li Lai's 5 Oct 2026 preprint.
+No files in archive/ were edited.
+
+2. Files created
+----------------
+All new working files are under work/meijerg5255_arithmetic/ and final
+outputs under results/meijerg5255_arithmetic/.
+Main deliverables: standalone .tex, rendered .pdf, REPORT.txt,
+verify_certificate.py, exact_chambers.py, certify_density.py,
+all_shell_cells.py, high_kernel.py, native.py,
+certify_spectral_constants.py, final_bound_certificate.py,
+and corresponding exact JSON data and audit reports.
+The complete reproducibility bundle also includes the previous readout
+checkpoints used for the numerical comparison.
+
+3. Experiment and identities recovered
+--------------------------------------
+MeijerG(5,2,5,5,1), forward native4x4, column0;
+start (1,1,0,0,0;0,0,0,0,0), direction
+(16,17,-11,-12,-10;2,1,0,-1,-2), n=N-1 steps from index0.
+R=[[0,0,-6A,3A-2B],[12,0,0,0]].
+A reordered admissible path yields an exact rational kernel with double
+poles. Its two harmonic readouts give the accepted zeta3 and zeta4 forms.
+The pure-zeta3 form needs one fewer d_(19n), accounting for its stronger
+arithmetic. The initial analytic rates are not reproved.
+
+4. Delta values and arithmetic certificates
+-------------------------------------------
+Known N500 finite values, retained for comparison:
+  (A,B)=(1,1): delta=0.0168532791698657832352818557972;
+              reduced denominator digits=24041.
+  (A,B)=(1,0): delta=0.227778715469072278115082096859;
+              reduced denominator digits=19912.
+New uniform lower bounds: 0.0113626 jointly, 0.2190118 for B=0.
+Baseline carry-density certificate >26.2366642995;
+fourteen periodic shell contribution >3.6747281958.
+The exact rational arrangement has270 Farey cells,5400 strata,47 selected
+cells merging into14 intervals. Tagged interval endpoints prove all
+integer lifts, not just finitely many sampled primes or depths.
+
+5. Rejected / unproved extensions
+--------------------------------
+No exact asymptotic gcd or full recovery of the observed finite delta is
+claimed. An additional prime factor on19n/2<p<10n appears in finite data
+but lacks a uniform proof. It is excluded from all final bounds.
+For fixed combined numerator/denominator rows, simply choosing separate
+paths added no factor in the finite family. Splitting the numerator into
+its zeta3 and zeta4 basis rows did improve finite certificates; that is
+recorded separately from the uniform shell argument.
+
+6. Verification and limitations
+-------------------------------
+Exact native path experiments:51 admissible cuts at n10,20,40,80,160,320,
+all16 endpoint entries verified. Independent audits covered the Barnes
+readout, factorial/LCM normalization, carry partition, broad shell, and
+all periodic shell lifts. The carry profile agreed with5184 eligible
+prime checks. Additional independent shell checks used5640 strata.
+All integer forms and reduced-denominator divisibilities were checked at
+n1,2,3,10,49,99,249,499, for (1,0),(0,1),(1,1),(1,-1),(2,3),(-7,5).
+The written symbolic argument supplies the uniform statement; these
+finite checks supplement it. The only analytic hypotheses used are the
+initial readouts and stated growth/error rates, as requested.
+The PDF compiled successfully and rendered pages were visually checked.
+
+7. Exact recommended next arithmetic region
+-------------------------------------------
+Keep this trajectory and these initial rows fixed. Target primes
+19n/2<p<10n. Try the native cut after lowering a2,a3,a4 by
+floor(11n/4),floor(12n/4),floor(10n/4), leaving other parameters fixed.
+Finite suffix-column valuations are (3,3,-1,-1) at (n,p)=(10,97),
+(40,389),(320,3167). A uniform suffix-column bound could improve the
+joint normalization; the stronger zeta3 saving needs additional row
+cancellation. The precise unproved second-order congruences are in
+work/meijerg5255_arithmetic/paths/SECOND_ORDER_NEXT_TARGET.txt.

@@ -1,0 +1,118 @@
+{
+  "status": "NUMERICAL_CANDIDATE",
+  "scope": "Each band independently finite-tested; overlapping extra requirements must be added only when separately checked.",
+  "bands": [
+    {
+      "lo": "8",
+      "hi": "11",
+      "extra": 1,
+      "finite_tested_primes": 339,
+      "failures": [],
+      "candidate_density": "3"
+    },
+    {
+      "lo": "19/2",
+      "hi": "10",
+      "extra": 1,
+      "finite_tested_primes": 55,
+      "failures": [],
+      "candidate_density": "1/2"
+    },
+    {
+      "lo": "17/4",
+      "hi": "13/3",
+      "extra": 1,
+      "finite_tested_primes": 12,
+      "failures": [],
+      "candidate_density": "1/12"
+    },
+    {
+      "lo": "16/5",
+      "hi": "13/4",
+      "extra": 1,
+      "finite_tested_primes": 11,
+      "failures": [],
+      "candidate_density": "1/20"
+    },
+    {
+      "lo": "18/5",
+      "hi": "11/3",
+      "extra": 1,
+      "finite_tested_primes": 7,
+      "failures": [],
+      "candidate_density": "1/15"
+    },
+    {
+      "lo": "18/7",
+      "hi": "13/5",
+      "extra": 1,
+      "finite_tested_primes": 8,
+      "failures": [],
+      "candidate_density": "1/35"
+    },
+    {
+      "lo": "19/7",
+      "hi": "11/4",
+      "extra": 1,
+      "finite_tested_primes": 6,
+      "failures": [],
+      "candidate_density": "1/28"
+    },
+    {
+      "lo": "17/8",
+      "hi": "11/5",
+      "extra": 1,
+      "finite_tested_primes": 11,
+      "failures": [],
+      "candidate_density": "3/40"
+    },
+    {
+      "lo": "19/8",
+      "hi": "12/5",
+      "extra": 1,
+      "finite_tested_primes": 3,
+      "failures": [],
+      "candidate_density": "1/40"
+    },
+    {
+      "lo": "16/9",
+      "hi": "11/6",
+      "extra": 1,
+      "finite_tested_primes": 7,
+      "failures": [],
+      "candidate_density": "1/18"
+    },
+    {
+      "lo": "15/11",
+      "hi": "11/8",
+      "extra": 1,
+      "finite_tested_primes": 2,
+      "failures": [],
+      "candidate_density": "1/88"
+    },
+    {
+      "lo": "24/17",
+      "hi": "10/7",
+      "extra": 1,
+      "finite_tested_primes": 2,
+      "failures": [],
+      "candidate_density": "2/119"
+    },
+    {
+      "lo": "14/13",
+      "hi": "11/10",
+      "extra": 1,
+      "finite_tested_primes": 6,
+      "failures": [],
+      "candidate_density": "3/130"
+    },
+    {
+      "lo": "14/13",
+      "hi": "12/11",
+      "extra": 1,
+      "finite_tested_primes": 5,
+      "failures": [],
+      "candidate_density": "2/143"
+    }
+  ]
+}

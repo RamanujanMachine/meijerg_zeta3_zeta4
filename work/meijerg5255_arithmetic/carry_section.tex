@@ -1,0 +1,111 @@
+\section{Primewise contents of the whole readout}
+We next divide the integer forms by a uniform product of primes. The
+valuation of a sum is bounded after its full factorial and harmonic
+structure has been exposed, rather than after each elementary matrix step.
+Only primes
+\[
+ p>29,\qquad p^2>30n,\qquad p\nmid n
+ \tag{E}
+\]
+are used. The omitted primes affect the logarithmic density by $o(n)$.
+Put $x=n/p$ and $y=j/p$. Since every factorial argument is at most $29n$,
+Legendre's formula has just its first term at these primes.
+Define
+\[
+ T(x,y)=2\lfloor15x\rfloor-3\lfloor10x\rfloor+
+ \sum_{u=0}^2\bigl(\lfloor y+(10+u)x\rfloor-\lfloor y+ux\rfloor\bigr).
+\]
+At a double pole, $2x\le y\le16x$, the exact valuation of $C_na_j$ is
+\[
+ s=T-\lfloor y-x\rfloor-\lfloor y-2x\rfloor
+        -\lfloor16x-y\rfloor-\lfloor17x-y\rfloor.
+ \tag{D}
+\]
+At the two simple-pole ranges it is the valuation of $C_nb_j$ that is
+needed, and it is exactly
+\begin{align*}
+ b_-&=T+\lceil2x-y\rceil-1-\lfloor16x-y\rfloor
+                   -\lfloor y-x\rfloor-\lfloor17x-y\rfloor,
+           &&x\le y<2x,\\
+ b_+&=T+\lceil y-16x\rceil-1-\lfloor y-2x\rfloor
+                   -\lfloor y-x\rfloor-\lfloor17x-y\rfloor,
+           &&16x<y\le17x.
+\end{align*}
+These formulas follow by evaluating the factorial products at each pole.
+The ceilings retain the endpoint correction in factorials of the form
+$(2n-j-1)!$; dropping this correction would invalidate some prime bounds.
+
+For a double pole, $b_j=a_jL_j$, where $L_j$ is a signed sum of reciprocal
+integers. Write $H_m=\sum_{k=1}^m1/k$ and set
+\begin{align*}
+ \ell(x,y)={}&\sum_{u=0}^2\left(H_{\lfloor y+ux\rfloor}
+                           -H_{\lfloor y+(10+u)x\rfloor}\right)\\
+ &+H_{\lfloor y-x\rfloor}+H_{\lfloor y-2x\rfloor}
+  -H_{\lfloor16x-y\rfloor}-H_{\lfloor17x-y\rfloor}.
+\end{align*}
+Indeed, $pL_j$ reduces modulo $p$ to this rational number. All its
+harmonic indices are smaller than $p$, by (E). Thus
+\[
+ v_p(C_nb_j)\ge s-\varepsilon(x,y),\qquad
+ \varepsilon(x,y)=\begin{cases}0&\ell(x,y)=0,\\1&\ell(x,y)\ne0.\end{cases}
+ \tag{LD}
+\]
+The equality test here is an equality in $\mathbb Q$, not a floating-point
+or heuristic congruence test. If $\ell\ne0$ happens to vanish modulo a
+particular prime, ignoring that cancellation is conservative.
+
+Put $l=\mathbf1_{x>1/19}$ and $h=\mathbf1_{y+2x\ge1}$. The elementary
+bound $v_p(H_{j+2n}^{(r)})\ge-rh$ gives the following lower bounds for
+$6C_nd_{19n}^{r}P_{r,n}$, with $r=3,4$:
+\[
+ \begin{array}{c|c}
+ \text{contribution}&\text{valuation lower bound}\\\hline
+ \text{double coefficient times }H^{(r)}&s+rl-rh\\
+ \text{simple coefficient at a double pole}&s-\varepsilon+rl-(r-1)h\\
+ \text{left or right simple pole}&b_\pm+rl-(r-1)h.
+ \end{array}
+ \tag{V}
+\]
+The same minimum also bounds $6C_nd_{19n}^rQ_n$: its corresponding
+valuation is $s+rl$, which is no smaller. Take the minimum over the three
+specified $y$ ranges and then its maximum with zero, using the established
+integer normalization for that last operation. Call the result $g_r(x)$.
+
+\paragraph{An exact finite certificate for all depths.}
+The attached \texttt{profiles/exact\_chambers.py} evaluates (D)--(V)
+using rational arithmetic. Every breakpoint in $y$ is a line $y=m+kx$
+with integer slope between $-12$ and $17$. Two such lines cross only at
+a rational $x$ of reduced denominator at most $29$. The constant-floor
+breakpoints and the harmonic cutoff are included in this list. Therefore
+it suffices to check the $270$ open intervals of the Farey partition of
+order $29$ in $(0,1)$, evaluating both the open $y$ intervals and their
+endpoints. This is a complete finite partition of the formulas, not a
+check at finitely many trajectory depths. Condition (E) prevents $x$ from
+lying on its boundaries.
+
+The output is
+\[
+ g_3(x)=g_4(x)=g(x)=\psi(\{x\})+h_0(x),
+ \tag{G}
+\]
+where $\psi$ is the step function in the appendix and
+\[
+ h_0(x)=
+ \begin{cases}
+ 3,&1/19<x<1/18,\\
+ 2,&1/18<x<1/17,\\
+ 1,&1/17<x<1/16,\\
+ 0,&\text{otherwise}.
+ \end{cases}
+\]
+For $x\ge1$ the harmonic cutoff is always active. In (V) the double-pole
+minimum is then $\min(s,s+1-\varepsilon)=s$, independent of $\ell$.
+The other values are $b_\pm+1$. Each $y$ range has width at least one, and
+these floor expressions are periodic under integral translations of $x$
+and $y$. This proves the periodic tail in (G); no periodicity of the
+harmonic expression $\ell$ is presumed.
+
+It follows that the product of eligible primes $p^{g(n/p)}$ divides both
+integer forms of orders three and four. Prime-dependent choices are
+permitted because divisibility is certified separately in each local
+ring $\mathbb Z_{(p)}$; unique factorization then combines the bounds.

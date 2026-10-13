@@ -1,0 +1,90 @@
+\paragraph{Constants for the specified native trajectory.}
+Write $n=N-1$. The limiting matrix of
+$S_n^{-1}M(n)S_{n+1}$, where
+$S_n=\operatorname{diag}(1,n^{-1},n^{-2},n^{-3})$, has an exact eigenvalue
+$-1$, a positive eigenvalue $\Lambda$, and a nonreal conjugate pair of
+modulus $\rho$. Exact polynomial isolation and rational logarithm enclosures give
+\[
+ \log\Lambda=53.28758332262020526735\ldots,\qquad
+ \log\rho=-59.51995592483447507214\ldots .
+\]
+The accepted analytic rate for the selected zeta readouts is
+\[
+ E=\log\Lambda-\log\rho
+   =112.80753924745468033949\ldots .
+\]
+The eigenvalue $-1$ is explicitly present; one must not identify $E$ with
+the gap between the two largest moduli of the full matrix. The selected
+readouts' elimination of that mode belongs to the analytic input.
+
+For
+\[
+ C_n=\frac{(15n)!^2}{(10n)!^3},\qquad d_m=\operatorname{lcm}(1,\ldots,m),
+\]
+Stirling's formula gives $c_C=30\log(3/2)$. Hence the scaled coefficient
+and error rates admit the safe enclosures
+\[
+ a=c_C+\log\Lambda<65.451536565866,\qquad
+ b=c_C+\log\rho<-47.356002681589.
+\]
+The alternative factor $(14n)!(16n)!/(10n)!^3$ has exponent
+$14\log14+16\log16-30\log10=12.23066938062874988548\ldots$,
+instead of $12.16395324324493145934\ldots$ for $C_n$.
+Any prime-divisor profile must be changed consistently when switching
+between these normalizations.
+
+\paragraph{The two arithmetic regimes.}
+Put
+\[
+ q_n=W_{00},\quad
+ p_{3,n}=-\frac12W_{20}+\frac14W_{30},\quad
+ p_{4,n}=-\frac16W_{30}.
+\]
+These are exactly the user's numerator and denominator divided by $12$.
+Suppose the arithmetic argument supplies divisors $G_{3,n}$ and $G_{4,n}$
+with logarithmic densities at least $\gamma_3,\gamma_4$, respectively, and
+\[
+ \frac{6C_nd_{19n}^3}{G_{3,n}}(p_{3,n},q_n)\in\mathbb Z^2,
+ \qquad
+ \frac{6C_nd_{19n}^4}{G_{4,n}}(p_{3,n},p_{4,n},q_n)\in\mathbb Z^3.
+\]
+Fixed integer coefficients $A,B$ introduce no new exponential factor.
+For $B=0$ one uses the first normalization. For $B\ne0$, one uses the
+second and forms $Ap_{3,n}+Bp_{4,n}$; the triangle inequality preserves
+the accepted error upper bound, and cancellation can only improve it.
+Fixed rational coefficients are handled by one fixed denominator multiplier.
+The resulting safe growth and decay exponents are
+\[
+\begin{array}{c|cc}
+ &\sigma\text{ upper bound}&\tau\text{ lower bound}\\\hline
+ B=0&122.451536565866-\gamma_3&\gamma_3-9.643997318411\\
+ B\ne0&141.451536565866-\gamma_4&\gamma_4-28.643997318411.
+\end{array}
+\]
+Whenever the respective $\tau$ is positive, the accepted analytic
+error and growth inputs give $\liminf\delta_N\ge\tau/\sigma$.
+This implication requires a proved uniform divisor density. A finite gcd
+or fitted denominator slope cannot be substituted for $\gamma_3$ or
+$\gamma_4$. No irrationality-measure upper bound is asserted here; that
+would require suitable additional nonvanishing and spacing hypotheses.
+
+\paragraph{An elementary baseline behind the divisor improvement.}
+The normalized rational kernel is a product of three binomial polynomials
+of degree $10n$ and two reciprocal blocks
+$m!/(t+u)_{m+1}$ with $m=15n$.
+For a binomial polynomial of degree $m$, its Taylor coefficient of degree
+$j$ at an integer becomes integral after multiplication by $d_m^j$.
+Indeed, Vandermonde's identity reduces this statement to
+$\binom{x}{l}=(-1)^{l-1}(x/l)\prod_{i=1}^{l-1}(1-x/i)$.
+A reciprocal block has integer residues, by its explicit binomial
+partial fractions. The difference between any two pole indices in this
+case is at most $16n$. Therefore the double-pole coefficients $a_j$ and
+simple-pole coefficients $b_j$ satisfy
+\[
+ C_na_j\in\mathbb Z,\qquad d_{16n}C_nb_j\in\mathbb Z.
+\]
+The finite readouts involve $H_{j+2n}^{(3)},H_{j+2n}^{(2)}$ for $\zeta(3)$,
+and $H_{j+2n}^{(4)},H_{j+2n}^{(3)}$ for $\zeta(4)$, with $j+2n\le19n$.
+This yields the displayed normalizations with $G_{3,n}=G_{4,n}=1$.
+The extra prime divisors are essential for a positive mixed decay exponent;
+the baseline alone does not establish the desired irrationality bound.

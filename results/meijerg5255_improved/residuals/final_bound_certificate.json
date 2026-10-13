@@ -1,0 +1,39 @@
+{
+  "status": "NUMERICAL_CANDIDATE",
+  "scope": "Exact final arithmetic consequence of the established uniform divisor lemmas and accepted analytic rates. The second-order improvement is no longer conditional on an unproved shell pattern. No irrationality-measure bound is asserted.",
+  "inputs": {
+    "uniform_second_order_cells": 9,
+    "all_cells": 270,
+    "prime_conditions": "p>29, p^2>30n, p does not divide n; fractional n/p lies off Farey walls",
+    "combined_divisor_profile": "baseline + indicator(first-order fourteen bands) + indicator(second-order two bands)"
+  },
+  "exact_density_lower": "30458547243805493774844991/1000000000000000000000000",
+  "exact_density_lower_decimal": 30.458547243805494,
+  "readable_density_lower": "761463681/25000000",
+  "accepted_height_upper": "32725768282933/500000000000",
+  "accepted_linear_error_upper": "-47356002681589/1000000000000",
+  "rates": [
+    {
+      "lcm_power": 3,
+      "scope": "B=0, A!=0",
+      "sigma_upper": "45996494662933/500000000000",
+      "tau_lower": "20814549921589/1000000000000",
+      "delta_lower": "20814549921589/91992989325866",
+      "sigma_decimal": 91.992989325866,
+      "tau_decimal": 20.814549921589,
+      "delta_decimal": 0.22626234970860434,
+      "advertised_strict_lower": "11313117/50000000"
+    },
+    {
+      "lcm_power": 4,
+      "scope": "B!=0, fixed A,B",
+      "sigma_upper": "55496494662933/500000000000",
+      "tau_lower": "1814549921589/1000000000000",
+      "delta_lower": "604849973863/36997663108622",
+      "sigma_decimal": 110.992989325866,
+      "tau_decimal": 1.814549921589,
+      "delta_decimal": 0.016348329138713757,
+      "advertised_strict_lower": "102177/6250000"
+    }
+  ]
+}

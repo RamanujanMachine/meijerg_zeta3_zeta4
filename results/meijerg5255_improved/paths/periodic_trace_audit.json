@@ -1,0 +1,7 @@
+{
+  "status": "NUMERICAL_CANDIDATE",
+  "scope": "Independent exact checks complementing the affine all-lift symbolic argument; no numerical extrapolation used by that argument.",
+  "rational_cells_checked": 72,
+  "residue_cells_and_boundaries_checked": 1440,
+  "all_passed": true
+}

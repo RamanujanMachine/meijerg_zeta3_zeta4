@@ -1,0 +1,46 @@
+Unproved second-order target:19n/2<p<10n
+======================================
+
+This file records a useful next target, not a uniform theorem.
+
+Because F_n has triple zeros at every integer2n+1..10n, the exact
+harmonic readout allows eta=p in this band. Write
+  A_tail=sum_{j>=p}a_j, B_tail=sum_{j>=p}b_j.
+The broad-shell result makes Q/p,A_tail/p,B_tail integral at p.
+Modulo p^2, the exact harmonic readouts reduce to
+  p^2 P3 = Q/p + A_tail/(8p) + B_tail/8,
+  p^3 P4 = Q/p + A_tail/(16p) + B_tail/24.
+Indeed j+p<3p, so the only p-divisible harmonic indices are p,2p;
+the remaining terms vanish modulo p^2 after scaling.
+
+The desired simultaneous extra power is therefore equivalent to
+  A_tail+32Q =0 mod p^3,
+  B_tail-24Q/p =0 mod p^2.
+The first-order kernel argument proves only the weaker leading
+congruences and does not justify these stronger ones. No second-order
+proof has been obtained in this lane.
+
+A genuine native-order numerical witness
+-----------------------------------------
+First lower a2,a3,a4 by floor(11n/4),floor(12n/4),floor(10n/4), leaving
+all other parameters fixed. Then follow the remaining safe whole blocks.
+The prefix lies in GL4(Z_p) throughout the above prime band: its L and
+all contiguous-root factors are positive integers less than p.
+For every eligible prime tested at n10,20,40,80,160,320, the component
+certificate at this cut supplies an extra factor for the joint/zeta4
+normalization beyond the broad-shell plus carry-profile certificate.
+
+Explicit examples:
+  n10,p97; n40,p389; n320,p3167.
+In each example the four suffix-column valuations are(3,3,-1,-1).
+All entries of both incoming numerator rows are p-units; the incoming
+denominator row has only its first entry nonzero, also a p-unit.
+The exact rational witnesses are saved in
+results/meijerg5255_arithmetic/paths/paths_Tn.jsonl
+under name negative1_positive0_lower0.
+
+This cut establishes only a finite p^-1 bound for both basis numerators.
+It therefore exhibits the desired extra joint/zeta4 factor, but does
+NOT establish the stronger P3 valuation>=0 needed to improve the pure
+zeta3 normalization by another p. A uniform suffix-column bound remains
+unproved and must not be extrapolated from these six depths.

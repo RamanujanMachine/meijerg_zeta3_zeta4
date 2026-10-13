@@ -1,0 +1,79 @@
+\paragraph{Independent audit of the fourteen shell bands and their lifts.}
+Set $x=n/p$, $y=k/p$, and $\varepsilon=\lfloor2x-y\rfloor$.
+The exact numerator high-digit root intervals are
+\[
+ [\lfloor ux-y\rfloor+1,\lfloor(u+10)x-y\rfloor],\qquad u=0,1,2,
+\]
+and the denominator intervals are
+\[
+ [\lceil-bx-y\rceil,\lfloor-ax-y\rfloor],
+ \qquad(a,b)=(1,17),(2,16).
+\]
+These formulas include every integer endpoint correctly. Their changes occur
+on lines $y=mx+c$, with
+$m\in\{0,1,2,10,11,12,-1,-2,-16,-17\}$ and $c\in\mathbb Z$.
+All intersections have $x$-denominator at most $29$. Thus the Farey-$29$
+partition, together with every $y$-boundary and every open $y$-strip,
+is an exhaustive finite arrangement certificate. For $p>29$ and
+$0<\{n/p\}<1$, none of the omitted $x$-walls can occur.
+The case $\{n/p\}=0$ is outside the selected bands.
+
+The independently implemented certificate checks 270 $x$-cells and
+5400 open or boundary strata. Exactly 47 selected cells merge into the
+fourteen stated bands. Throughout every selected cell, $c(k)-d(k)\ge-1$;
+on its minimal support $c(k)-d(k)=-1$, all ten tagged interval endpoints,
+after subtraction of $\varepsilon$, are independent of $y$.
+Keeping the interval tags is essential for the following uniform lift.
+
+Write $x=t+f$, $t\in\mathbb Z_{\ge0}$, $0<f<1$. Then
+$\varepsilon(t+f,y)=2t+\varepsilon(f,y)$. After subtracting $\varepsilon$,
+the numerator endpoints change by $(u-2)t,(u+8)t$, and the denominator
+endpoints change by $-(b+2)t,-(a+2)t$. These changes are independent of
+$y$. Each numerator interval gains $10t$ roots; the denominator intervals
+gain $16t$ and $14t$. Hence $c-d$ is unchanged, and the entire normalized
+high-digit rational kernel remains independent of $k$ on minimal support,
+for every integer $t$, not merely the finitely many tested lifts.
+
+Assume $p>29$ and $p^2>30n$. Distinct high-digit roots differ by less than
+$29n/p<p$ and hence by a $p$-adic unit. Also every harmonic high index is
+at most $19n/p<p$. These inequalities justify local partial-fraction
+extraction and harmonic reduction without any unrecorded divisibility loss.
+The weaker cutoff $p^2>60n$ also suffices but is unnecessary.
+
+As in the broad-shell proof, the multiplicity inequality gives
+\[
+ \mathcal Q(X)=(X^p-X)\overline{\mathcal N}(X)/
+                       \overline{\mathcal D}(X)
+ \in\mathbb F_p[X],\qquad\deg\mathcal Q=p-2.
+\]
+The polynomial vanishes outside minimal support. On minimal support the
+local rational function $pF_n(k+pV)$ is $-\mathcal Q(k)$ times the
+high-digit kernel. Translation $V\mapsto V+\varepsilon$ puts its poles
+at the normalized endpoints just certified, and the relevant harmonic
+indices become their negatives. Its harmonic readout is consequently a
+constant depending on the $x$-cell and $t$, but independent of $k$.
+Thus $p^{r-1}P_{r,n}$ is that constant times
+$\sum_{k\in\mathbb F_p}\mathcal Q(k)=0$, for $r=3,4$.
+In particular
+\[
+ v_p(Q_n)\ge1,\qquad v_p(P_{r,n})\ge2-r.
+\]
+Since $p\le19n$ in these bands and every lift,
+the normalized pair $6C_nd_{19n}^{r}(Q_n,P_{r,n})$ has common valuation
+at least $c(f)+2$, where
+$c(f)=2\lfloor15f\rfloor-3\lfloor10f\rfloor$.
+The certificate separately verifies that this equals the baseline
+valuation plus one, both in the first period and in every later period.
+There is therefore no double counting of the improvement.
+
+The first-period density is exactly $195197/55440$. Including all integer
+lifts gives the positive series
+\[
+ \sum_{(a,b)\in\mathcal B}\sum_{t=0}^{\infty}
+ \left(\frac1{t+a}-\frac1{t+b}\right),
+\]
+where $\mathcal B$ is the fourteen-band set in the $x$ variable.
+The first 1000 periods already contribute more than $3.674728195806$.
+The finitely many fixed primes and primes $p^2\le30n$ contribute only
+$o(n)$ to the logarithm of the divisor, so their exclusion does not change
+the asymptotic density. This last assertion uses bounded profile exponents.

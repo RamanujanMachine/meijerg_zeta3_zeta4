@@ -1,0 +1,45 @@
+{
+  "status": "NUMERICAL_CANDIDATE",
+  "periods": 1000,
+  "rounding_scale": 1000000000000000000,
+  "cell_count": 270,
+  "term_counts": [
+    188003,
+    188003
+  ],
+  "base_profile_lower": [
+    "26236664299512325943/1000000000000000000",
+    "26236664299512325943/1000000000000000000"
+  ],
+  "base_profile_lower_decimal": [
+    26.236664299512327,
+    26.236664299512327
+  ],
+  "extra_shell_term_count": 47000,
+  "extra_shell_density_lower": "1837364097903093409/500000000000000000",
+  "extra_shell_density_lower_decimal": 3.674728195806187,
+  "total_density_lower": [
+    "29911392495318512761/1000000000000000000",
+    "29911392495318512761/1000000000000000000"
+  ],
+  "safe_total_density_lower": "2991139/100000",
+  "rates": [
+    {
+      "lcm_power": 3,
+      "scope": "B=0",
+      "sigma_upper": "46270073282933/500000000000",
+      "tau_lower": "20267392681589/1000000000000",
+      "delta_lower": "20267392681589/92540146565866",
+      "delta_lower_decimal": 0.21901189303999602
+    },
+    {
+      "lcm_power": 4,
+      "scope": "B!=0, fixed integers A,B",
+      "sigma_upper": "55770073282933/500000000000",
+      "tau_lower": "1267392681589/1000000000000",
+      "delta_lower": "1267392681589/111540146565866",
+      "delta_lower_decimal": 0.011362659281074076
+    }
+  ],
+  "scope": "Exact rational numerical consequence of the uniform profile, the fourteen periodic-shell lemma, and accepted analytic growth/error inputs. No irrationality-measure upper bound is asserted."
+}

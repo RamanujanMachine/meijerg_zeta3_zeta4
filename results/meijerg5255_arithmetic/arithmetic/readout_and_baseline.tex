@@ -1,0 +1,146 @@
+% Uniform arithmetic readout for MeijerG(5,2,5,5,1).
+% Here n=N-1; no asymptotic analytic assertion is used.
+\section{A rational kernel for the two initial conditions}
+Put $n=N-1\ge0$ and let $W_n$ be the native forward CMF product from
+$(1,1,0,0,0;0,0,0,0,0)$ to
+$(1+16n,1+17n,-11n,-12n,-10n;2n,n,0,-n,-2n)$.
+Define
+\[
+ F_n(t)=\frac{\prod_{u=0}^2(t-(10+u)n)_{10n}}
+ {(t+n)_{16n+1}(t+2n)_{14n+1}}.
+\]
+Its partial fractions are
+\[
+ F_n(t)=\sum_{j=n}^{17n}\left(\frac{a_j}{(t+j)^2}
+                    +\frac{b_j}{t+j}\right),\qquad
+ a_j=0\quad(j<2n\ \hbox{or}\ j>16n).
+\]
+The function is $O(t^{-2})$, so $\sum_jb_j=0$.
+With $H_m^{(s)}=\sum_{k=1}^m k^{-s}$, set
+\begin{align*}
+ Q_n&=\sum_j a_j,\\
+ P_{3,n}&=\sum_j\left(a_jH_{j+2n}^{(3)}+
+                              \frac{b_j}{2}H_{j+2n}^{(2)}\right),\\
+ P_{4,n}&=\sum_j\left(a_jH_{j+2n}^{(4)}+
+                              \frac{b_j}{3}H_{j+2n}^{(3)}\right).
+\end{align*}
+Then the following identities hold uniformly:
+\[
+ Q_n=(-1)^n(W_n)_{00},\qquad (W_n)_{10}=0,
+\]
+\[
+ P_{3,n}=(-1)^n\left(-\frac{(W_n)_{20}}2+
+                              \frac{(W_n)_{30}}4\right),\qquad
+ P_{4,n}=(-1)^n\left(-\frac{(W_n)_{30}}6\right).
+\]
+Consequently the requested approximant is exactly
+$(A P_{3,n}+B P_{4,n})/Q_n$.
+
+\paragraph{Proof by the CMF mechanism.}
+For an integer vertex $w=(a_0,\ldots,a_4;b_0,\ldots,b_4)$ write
+\[
+ R_w(t)=(-1)^{a_0+a_1}
+       \frac{\prod_{j=0}^4\Gamma(t+b_j)}
+            {\prod_{i=0}^4\Gamma(t+a_i)}.
+\]
+On the path used below this is a rational function with poles of order at
+most two, all at integers.  Initially it is $t^{-2}$, and at the endpoint
+it is $(-1)^nF_n(t)$.  The gamma functional equation gives exactly the
+native elementary CMF multipliers when $\theta$ is represented by $-t$.
+To check the companion reduction, put
+$H_w(t)=R_w(t)\prod_j(t+b_j)$.  Then
+\[
+ R_w(t)\prod_i(t+a_i-1)=H_w(t-1).
+\]
+Thus the differential equation reduces to a translate difference of
+$H_w$, up to its immaterial overall sign.
+
+Choose the coordinate-block order: first decrease $a_2,a_3,a_4$ to their
+endpoint values; then increase $a_0,a_1$; then increase $b_0,b_1$; finally
+decrease $b_3,b_4$.  During the first three blocks use a vertical contour
+$c\in(0,1)$.  At their end the rational numerator has zeros of multiplicity
+three at every integer $1,\ldots,10n$, so move the contour to
+$c\in(2n,2n+1)$.  This move crosses no pole for either kernel
+\[
+ K_2(t)=\frac{\pi^2}{\sin^2\pi t},\qquad
+ K_3(t)=\frac{\pi^3\cos\pi t}{\sin^3\pi t}.
+\]
+Use this latter contour for every remaining block.  Initially $H_w$ has
+a zero of order at least three at $0$.  In the later blocks it has one at
+$2n$: the possible loss of one zero when $b_4=-2n$ is restored by the
+factor $t+b_4$ in $H_w$.  Therefore multiplication by either periodic
+kernel and integration annihilates $H_w(t-1)-H_w(t)$.  Horizontal boundary
+integrals vanish by the kernels' exponential decay.  This proves the
+companion relation at every point used by the path; the elementary gamma
+relations prove the edge relations.  Hence these integrals propagate by
+the actual native CMF matrices, without a scalar normalization.
+
+More precisely, the two initial rows of period integrals on the basis
+$((-t)^r/t^2)_{r=0}^3$ are
+\[
+ (2\zeta(3),-\zeta(2),1,-1/2),\qquad
+ (-3\zeta(4),\zeta(3),0,-1/2).
+\]
+The first two entries follow by closing the contour to the right.
+For the last two, $K_2=-\pi(\cot\pi t)'$ gives
+$\int K_2/(2\pi i)=1$; reflection about $1/2$ gives
+$\int tK_2/(2\pi i)=1/2$; and $K_3=-K_2'/2$ gives the second row by
+integration by parts.
+
+There are also two purely rational functionals: the sum of the double-pole
+coefficients and the sum of the simple-pole coefficients.  Both vanish on
+integer translate differences and on polynomials.  Their initial rows are
+$(1,0,0,0)$ and $(0,-1,0,0)$.  They therefore obey the same CMF transport.
+At the endpoint they give $Q_n=(-1)^n(W_n)_{00}$ and $(W_n)_{10}=0$.
+Finally, closing the endpoint contour to the right gives
+\[
+ \int K_2F_n\,\frac{dt}{2\pi i}
+   =-\sum_{k=2n+1}^{\infty}F_n'(k)=2(Q_n\zeta(3)-P_{3,n}),
+\]
+\[
+ \int K_3F_n\,\frac{dt}{2\pi i}
+   =-\frac12\sum_{k=2n+1}^{\infty}F_n''(k)
+   =-3(Q_n\zeta(4)-P_{4,n}).
+\]
+Comparing with the transported rows proves all asserted identities.
+The case $n=0$ is immediate from $W_0=I$ and $F_0=t^{-2}$.
+
+\section{A uniform denominator bound and the special $B=0$ saving}
+Let $d_m=\operatorname{lcm}(1,\ldots,m)$ and, for $n\ge1$, put
+\[
+ C_n=\frac{(15n)!^2}{(10n)!^3}.
+\]
+Then
+\[
+ C_na_j\in\mathbb Z,\qquad d_{16n}C_nb_j\in\mathbb Z.
+\]
+In particular
+\[
+ 6C_nd_{19n}^3(Q_n,P_{3,n})\in\mathbb Z^2,\qquad
+ 6C_nd_{19n}^4(Q_n,P_{3,n},P_{4,n})\in\mathbb Z^3.
+\]
+This removes one entire factor $d_{19n}$ when $B=0$, uniformly in $n$;
+it is not an inference from finite gcd measurements.
+
+\paragraph{Proof.}
+Re-pair the denominator intervals as
+$(t+n)_{15n+1}(t+2n)_{15n+1}$ and write
+\[
+ C_nF_n(t)=P(t)L_n(t)L_{2n}(t),\quad
+ P(t)=\prod_{u=0}^2\binom{t-un-1}{10n},\quad
+ L_c(t)=\frac{(15n)!}{\prod_{j=c}^{c+15n}(t+j)}.
+\]
+Every $L_c$ has integer simple-pole residues
+$(-1)^{j-c}\binom{15n}{j-c}$.
+The polynomial $P$ is integer-valued on integers.  Moreover
+$d_{10n}P'(k)$ is integral at every integer $k$: apply the Newton-basis
+identity
+$\binom{x}{m}'=\sum_{i=1}^m(-1)^{i-1}\binom{x}{m-i}/i$
+to each of its three binomial factors and use the product rule.
+At a common pole the double coefficient is therefore integral, while its
+simple coefficient is a sum of an integer multiple of $P'(-j)$ and
+terms with integer numerator and denominator $j-k$.  At a pole of only one
+factor only the latter kind occurs.  All such differences satisfy
+$0<|j-k|\le16n$.  This proves both coefficient assertions, including the
+simple poles outside the overlap.  Finally $j+2n\le19n$, and the harmonic
+numbers of order $s$ are cleared by $d_{19n}^s$.

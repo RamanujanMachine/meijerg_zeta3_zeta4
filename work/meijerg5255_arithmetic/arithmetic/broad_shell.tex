@@ -1,0 +1,99 @@
+\section{A uniform extra prime factor: $8n<p<11n$}
+For every integer $n\ge1$ and prime $8n<p<11n$, the rational readout just
+constructed satisfies
+\[
+ v_p(Q_n)\ge1,\qquad v_p(P_{3,n})\ge-1,\qquad
+ v_p(P_{4,n})\ge-2.                                      \tag{BS}
+\]
+The termwise harmonic estimates give only $-2$ and $-3$ for the last two
+valuations.  Thus (BS) supplies one additional common factor $p$ for both
+initial conditions, uniformly throughout this entire prime interval.
+This assertion does not require an asymptotic hypothesis or a finite-depth
+extrapolation.
+
+\paragraph{Root multiplicities.}
+Write $F_n=\mathcal N/\mathcal D$ with the monic numerator and denominator
+from its definition.  A numerator root lies in one of the three integer
+intervals $[1,10n]$, $[n+1,11n]$, $[2n+1,12n]$.  A denominator root is the
+negative of an integer in $[n,17n]$ or $[2n,16n]$.
+For $0\le k<p$ let $c(k)$ and $d(k)$ count these roots congruent to $k$,
+with multiplicity.  Direct interval counting gives
+\[
+ c(k)-d(k)\ge-1.
+\]
+Equality holds precisely when
+\[
+ \max(12n-p+1,\,2p-16n)\le k\le p-2n.                  \tag{S}
+\]
+On this support the three numerator roots are all $k$ itself, whereas the
+four denominator roots are $k-p,k-p,k-2p,k-2p$.
+In particular $k>2n$.
+
+Here are details of the count, to make the chamber assertion uniform in
+$n$ and $p$.  In the middle interval $2n<k\le p-2n$, all three roots $k$
+are present, and both denominator roots $k-p$ are present.  There are at
+most two additional denominator roots, both $k-2p$; they are both present
+exactly when $k\ge2p-16n$.  No additional numerator root $k+p$ is present
+exactly when $k>12n-p$.  This proves (S) on the middle interval.
+For $p-2n<k\le p-n$ there are three roots on each side.  For $p-n<k<p$
+there are two or three denominator roots and at least as many numerator
+roots; a third denominator root can occur only when $p<10n$, when all
+three numerator roots $k$ are present.
+For $0\le k\le2n$ the denominator count is
+$2+\mathbf1_{k\ge2p-17n}+\mathbf1_{k\ge2p-16n}$.
+At $k=0$ the assertion follows immediately by comparing $p$ with
+$17n/2$ and $10n$.  For $0<k\le n$, its third root forces $p\le9n$ and
+hence a third numerator root, while its fourth forces $p\le17n/2$ and
+hence a fourth numerator root.  For $n<k\le2n$, these same implications
+are $p\le19n/2$ and $p\le9n$, respectively.  This covers every residue,
+including all integer endpoints.
+
+\paragraph{The local kernel and the cancellation.}
+Reduce the two monic polynomials modulo $p$.  The multiplicity inequality
+implies that
+\[
+ \mathcal Q(X)=(X^p-X)\frac{\overline{\mathcal N}(X)}
+                               {\overline{\mathcal D}(X)}
+             \in\mathbb F_p[X],\qquad \deg\mathcal Q=p-2.
+\]
+At a residue outside (S), $\mathcal Q(k)=0$.  At a residue inside (S),
+substitution $t=k+pV$, cancellation of the factors not divisible by $p$,
+and $(X^p-X)'=-1$ give
+\[
+ pF_n(k+pV)\equiv-\mathcal Q(k)\,
+       \frac{V^3}{(V+1)^2(V+2)^2}\pmod p.               \tag{LK}
+\]
+Outside (S) the left side reduces to zero.  This is an identity of local
+rational functions.  All distinct high-digit roots differ by at most
+four, and hence by a $p$-adic unit: the interval is empty for $n=1$, and
+otherwise $p\ge17$.  It is consequently legitimate to extract the
+partial-fraction coefficients from (LK).  It also shows at every residue
+that $a_j/p$ and $b_j$ are $p$-integral, and that both reduce to zero away
+from the support (S).
+
+On that support, the two nodes in the partial fractions of $F_n$ are
+$j=p-k$ and $j=2p-k$.  Their harmonic indices $j+2n$ lie respectively
+below $p$ and between $p$ and $2p$.  Thus, after multiplying an order-$r$
+harmonic number by $p^r$, their residues modulo $p$ are $0$ and $1$.
+The fixed high-digit kernel is
+\[
+ \frac{V^3}{(V+1)^2(V+2)^2}
+ =-\frac1{(V+1)^2}+\frac5{V+1}
+   -\frac8{(V+2)^2}-\frac4{V+2}.
+\]
+Its harmonic readout constants are therefore $-8-4/2=-10$ for $P_3$ and
+$-8-4/3=-28/3$ for $P_4$.  Summing (LK) over all residues yields
+\[
+ p^2P_{3,n}\equiv10\sum_{k\in\mathbb F_p}\mathcal Q(k)=0\pmod p,
+ \qquad
+ p^3P_{4,n}\equiv\frac{28}{3}
+       \sum_{k\in\mathbb F_p}\mathcal Q(k)=0\pmod p.
+\]
+The last equalities use $\deg\mathcal Q=p-2<p-1$.
+Also $Q_n=\sum a_j\in p\mathbb Z_{(p)}$.  This proves (BS).
+For the normalization $C_n=(15n)!^2/(10n)!^3$, one has
+$v_p(C_n)=-1$ on $(8n,10n)$ and $v_p(C_n)=2$ on $(10n,11n)$.
+Accordingly the common exponent in
+$6C_nd_{19n}^r(Q_n,P_{r,n})$, $r=3,4$, is at least $1$ and $4$ on these
+two intervals, respectively: exactly one more than the baseline local
+coefficient bound.

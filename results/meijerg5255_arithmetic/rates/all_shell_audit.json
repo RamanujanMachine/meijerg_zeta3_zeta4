@@ -1,0 +1,71 @@
+{
+  "status": "NUMERICAL_CANDIDATE",
+  "scope": "Exact arrangement and endpoint audit supporting the separately written uniform proof; no inference from finite n,p tests.",
+  "all_cells": 270,
+  "arrangement_walls": 189,
+  "sampled_strata": 5400,
+  "valid_cells": 47,
+  "valid_bands": [
+    [
+      "1/11",
+      "1/8"
+    ],
+    [
+      "3/13",
+      "4/17"
+    ],
+    [
+      "3/11",
+      "5/18"
+    ],
+    [
+      "4/13",
+      "5/16"
+    ],
+    [
+      "4/11",
+      "7/19"
+    ],
+    [
+      "5/13",
+      "7/18"
+    ],
+    [
+      "5/12",
+      "8/19"
+    ],
+    [
+      "5/11",
+      "8/17"
+    ],
+    [
+      "6/11",
+      "9/16"
+    ],
+    [
+      "7/12",
+      "10/17"
+    ],
+    [
+      "7/11",
+      "11/17"
+    ],
+    [
+      "7/10",
+      "12/17"
+    ],
+    [
+      "8/11",
+      "11/15"
+    ],
+    [
+      "10/11",
+      "16/17"
+    ]
+  ],
+  "first_period_density": "195197/55440",
+  "first_period_density_decimal": 3.5208694083694083,
+  "sufficient_prime_cutoff": "p>29 and p^2>30n",
+  "omitted_prime_density": 0,
+  "all_checks_passed": true
+}

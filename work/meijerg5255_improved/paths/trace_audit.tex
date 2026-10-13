@@ -1,0 +1,118 @@
+\section*{Independent audit: the second-order shell}
+Put $p=10n-d$, where $0<d<n/2$, and assume $p>29$.
+Every root of the numerator and denominator of $F_n$ has a unique
+expression $k+p\ell$ with $0\leq k<p$.  Let $h_k$ be numerator
+multiplicity minus denominator multiplicity in that residue class, and
+let $\sigma_k$ be the corresponding signed sum of the high digits $\ell$.
+All the following identities use signed multiplicities, so repeated roots
+cause no difficulty.
+
+The numerator contributes three roots to every residue, with a fourth
+precisely on the three disjoint intervals
+\[
+ 1\leq k\leq d,\qquad n+1\leq k\leq n+d,
+ \qquad 2n+1\leq k\leq2n+d.
+\]
+The denominator multiplicity is
+\[
+ [k\leq p-n]+[k\leq p-2n]
+ +[k\geq3n-2d]+[k\geq4n-2d].
+\]
+Consequently $h_k\geq-1$.  Its negative support is exactly
+\[
+ 4n-2d\leq k\leq p-2n.
+\]
+There the numerator high digits are $(0,0,0)$ and the denominator high
+digits are $(-2,-2,-1,-1)$.  Thus $\sigma_k=6$ and the common high-root
+kernel is
+\[
+ U(V)=\frac{V^3}{(V+1)^2(V+2)^2}.
+\]
+The only classes with $h_k=0$ are
+\[
+ \max(2n+d+1,3n-2d)\leq k\leq4n-2d-1,
+ \qquad p-2n+1\leq k\leq p-n.
+\]
+The respective kernels and signed sums are
+\[
+ U_k=(V+2)U,\quad\sigma_k=4;
+ \qquad U_k=(V+1)U,\quad\sigma_k=5.
+\]
+In particular both satisfy $U_k=(V+6-\sigma_k)U$.
+These inclusive integer intervals handle the change of ordering at
+$d=n/3$ without an exceptional boundary convention.  Also $h_0=1$.
+
+Here is a direct audit of the formal deformation argument.  Over
+$\mathbb Q(P,t)$ replace every root $k+p\ell$ by $k+P\ell$, obtaining
+$F_P(t)$. Its degree at infinity is $-2$, and
+\[
+ F_0(t)=\prod_k(t-k)^{h_k}.
+\]
+Write $I=\{k:h_k=-1\}$ and $J=\{k:h_k=0\}$.  For $k\in I$, put
+\[
+ L_k=\prod_{s\ne k}(k-s)^{h_s},\quad
+ H_k=\sum_{s\ne k}\frac{h_s}{k-s},\quad
+ T_k=\sum_{s\ne k}\frac{\sigma_s}{k-s}.
+\]
+For $k\in J$, put $L_k=F_0(k)$. All these numbers are $p$-integral.
+Since $F_0=O(t^{-2})$, the sum of its residues gives the exact identity
+\[
+ \sum_{k\in I}L_k=0.
+\]
+Differentiation of the deformation gives
+\[
+ \left.\partial_PF_P(t)\right|_{P=0}
+ =-F_0(t)\sum_k\frac{\sigma_k}{t-k}=O(t^{-3}).
+\]
+The residue at $k\in I$ is $-L_k(T_k+6H_k)$; the residue at $k\in J$
+is $-\sigma_kL_k$; higher-multiplicity zeros contribute no residue.
+Hence, exactly over $\mathbb Q$,
+\[
+ \sum_{I}L_kT_k=-6\sum_{I}L_kH_k-\sum_J\sigma_kL_k. \tag{1}
+\]
+Over $\mathbb F_p$, the expression
+\[
+ Q(X)=(X^p-X)\overline{F_0}(X)
+\]
+is a polynomial of degree $p-2$.  Expanding at $k$ and using
+$(X^p-X)'=-1$ and its zero quadratic coefficient yields
+\[
+ Q'(k)=-L_kH_k\ (k\in I),\qquad
+ Q'(k)=-L_k\ (k\in J),\qquad Q'(k)=0\ (h_k\geq1).
+\]
+Since $\deg Q'<p-1$, summing over the finite field proves
+\[
+ \sum_I L_kH_k+\sum_JL_k=0\pmod p. \tag{2}
+\]
+
+Direct expansion of the noncongruent factors gives
+\[
+ pF_p(k+pV)=L_kU(V)\{1+p(VH_k-T_k)\}\pmod{p^2}
+ \quad(k\in I),
+\]
+whereas for $k\in J$ it gives $pL_kU_k(V)$ modulo $p^2$; classes
+$h_k\geq1$ contribute zero modulo $p^2$.  These are rational-function
+congruences in the localization where the factors $V-\ell$ are inverted
+and every noncongruent factor is a unit modulo $p$.
+Using the exact residue sum, (1), and (2), therefore,
+\[
+ \frac1p\sum_{k=0}^{p-1}pF_p(k+pV)
+ \equiv\sum_{k\in J}L_k\{U_k(V)+(\sigma_k-V-6)U(V)\}=0\pmod p.
+\]
+Thus the trace $\sum_k pF_n(k+pV)$ is zero modulo $p^2$.
+
+One may extract Laurent coefficients at $V=-1,-2$: all other local
+factors are units there modulo $p$, and $-1,-2$ remain distinct modulo
+$p$.  The coefficients of $(V+1)^{-2}$ and $(V+2)^{-2}$ are the sums
+of $a_j/p$ over, respectively, $1\leq j\leq p$ and $p<j\leq2p$;
+the corresponding simple-pole coefficients are the sums of $b_j$.
+Each is divisible by $p^2$.  Since $h_0=1$, the individual endpoint
+coefficients satisfy $v_p(a_p)\geq3$ and $v_p(b_p)\geq2$.
+It follows in particular that
+\[
+ v_p(Q_n)\geq3,\qquad
+ v_p\!\left(\sum_{j\geq p}a_j\right)\geq3,\qquad
+ v_p\!\left(\sum_{j\geq p}b_j\right)\geq2.
+\]
+This coefficient extraction is a local rational-function argument,
+not an inference from evaluating the trace at finitely many $V$.

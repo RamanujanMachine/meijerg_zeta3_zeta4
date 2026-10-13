@@ -1,0 +1,48 @@
+{
+  "status": "NUMERICAL_CANDIDATE",
+  "n": 3,
+  "N": 4,
+  "all_integer_forms_pass": true,
+  "all_reduced_denominators_divide": true,
+  "new_prime_factors": 0,
+  "gcd_log_density": 12.124380217577048,
+  "rows": [
+    {
+      "A": 1,
+      "B": 0,
+      "log_reduced_q": 262.95369481939207,
+      "log_integer_bound": 312.6670869597895
+    },
+    {
+      "A": 0,
+      "B": 1,
+      "log_reduced_q": 313.9622012035574,
+      "log_integer_bound": 366.12275966576
+    },
+    {
+      "A": 1,
+      "B": 1,
+      "log_reduced_q": 313.9622012035574,
+      "log_integer_bound": 366.12275966576
+    },
+    {
+      "A": 1,
+      "B": -1,
+      "log_reduced_q": 313.9622012035574,
+      "log_integer_bound": 366.12275966576
+    },
+    {
+      "A": 2,
+      "B": 3,
+      "log_reduced_q": 312.8635889148893,
+      "log_integer_bound": 366.12275966576
+    },
+    {
+      "A": -7,
+      "B": 5,
+      "log_reduced_q": 312.3527632911233,
+      "log_integer_bound": 366.12275966576
+    }
+  ],
+  "seconds": 0.0032656669500283897
+}

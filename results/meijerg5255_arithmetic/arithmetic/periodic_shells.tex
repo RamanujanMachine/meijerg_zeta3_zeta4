@@ -1,0 +1,128 @@
+\section{Fourteen first-order shells and all their periodic lifts}
+Let $\mathcal S\subset(0,1)$ be the union of the fourteen open intervals
+in the first column of the table below.  For every prime $p>29$ with
+$p^2>30n$ and $\{n/p\}\in\mathcal S$, one has
+\[
+ v_p(Q_n)\ge1,\qquad v_p(P_{3,n})\ge-1,\qquad
+ v_p(P_{4,n})\ge-2.                                    \tag{PS}
+\]
+Thus the extra prime divisor may include every such prime, not only those
+in the original shell $8n<p<11n$.  These are first-order divisibility
+statements.  No unproved second-order enhancement is included.
+
+\paragraph{The finite root-count certificate.}
+Put $n/p=t+f$ with $t\in\mathbb Z_{\ge0}$ and $0<f<1$, and write
+$y=k/p$ for a residue $0\le k<p$.  At $t=0$, the three numerator high-root
+intervals have integer endpoints
+\[
+ [\lfloor uf-y\rfloor+1,\ \lfloor(u+10)f-y\rfloor],\quad u=0,1,2,
+\]
+and the two denominator intervals have endpoints
+\[
+ [\lceil-17f-y\rceil,\ \lfloor-f-y\rfloor],\qquad
+ [\lceil-16f-y\rceil,\ \lfloor-2f-y\rfloor].
+\]
+Let $h$ be the total numerator count minus the total denominator count,
+and put $\epsilon_0=\lfloor2f-y\rfloor$.
+For every $f\in\mathcal S$ away from Farey walls of order $29$ (in particular, every admissible $f=\{n/p\}$), the following two assertions hold:
+$h\ge-1$ at every residue; and wherever $h=-1$, subtracting $\epsilon_0$
+from every one of the ten endpoints yields the single row of the table
+corresponding to $f$.  Notation $[L,U]$ includes every integer from $L$ to
+$U$ with multiplicity; overlapping intervals retain their multiplicities.
+\[
+\begin{array}{c|ccc|cc}
+ f\text{ interval}&N_0&N_1&N_2&D_0&D_1\\\hline
+ (1/11,1/8)&[1,1]&[1,1]&[1,1]&[-1,0]&[-1,0]\\
+ (3/13,4/17)&[0,1]&[0,2]&[1,2]&[-4,-1]&[-4,-1]\\
+ (3/11,5/18)&[0,2]&[0,2]&[1,2]&[-5,-1]&[-4,-1]\\
+ (4/13,5/16)&[0,2]&[1,3]&[1,3]&[-5,-1]&[-5,-1]\\
+ (4/11,7/19)&[0,3]&[1,3]&[1,4]&[-6,-1]&[-6,-1]\\
+ (5/13,7/18)&[1,3]&[1,4]&[1,4]&[-6,-1]&[-6,-1]\\
+ (5/12,8/19)&[0,3]&[1,4]&[1,4]&[-7,-1]&[-7,-2]\\
+ (5/11,8/17)&[0,3]&[0,4]&[1,4]&[-8,-2]&[-8,-2]\\
+ (6/11,9/16)&[0,4]&[0,5]&[1,5]&[-10,-2]&[-9,-2]\\
+ (7/12,10/17)&[-1,4]&[0,5]&[1,5]&[-11,-2]&[-10,-3]\\
+ (7/11,11/17)&[-1,5]&[0,5]&[1,6]&[-12,-2]&[-11,-3]\\
+ (7/10,12/17)&[-1,5]&[0,6]&[1,7]&[-13,-2]&[-12,-3]\\
+ (8/11,11/15)&[-1,5]&[0,6]&[1,7]&[-13,-3]&[-13,-3]\\
+ (10/11,16/17)&[-1,7]&[0,8]&[1,9]&[-17,-3]&[-16,-4]
+\end{array}
+\]
+This finite table can be verified entirely with rational arithmetic.
+All changes of an endpoint occur on a line
+$y=mf+c$, with $m\in\{0,1,2,10,11,12,-1,-2,-16,-17\}$ and integer $c$.
+The crossing abscissas in $(0,1)$ therefore have reduced denominator at
+most $29$.  Partition the $f$-axis by the Farey sequence of order $29$;
+there are $270$ open cells.  At the midpoint of each, test every
+$y$-boundary and every intervening open interval, including $y=0$ and
+excluding $y=1$.  The root data are constant on each tested cell, so this
+finite verification proves the table, rather than testing selected
+values of $n$.  The supplied certificate checks all $5400$ such cells
+and boundaries; $47$ of the Farey cells form the fourteen displayed
+intervals.  A missing Farey boundary cannot occur for $f=\{n/p\}$ when
+$p>29$; its reduced denominator would have to be $p$.
+
+\paragraph{Why the same table proves every lift.}
+Changing $f$ to $t+f$ adds $30t$ numerator roots and $30t$ denominator
+roots at every residue.  Hence $h$ and its minimal support are unchanged.
+Also $\epsilon=\lfloor2(t+f)-y\rfloor=2t+\epsilon_0$.
+For a table entry $N_u=[L_u,U_u]$, the high-root interval after subtracting
+$\epsilon$ is
+\[
+ [(u-2)t+L_u,\ (u+8)t+U_u].
+\]
+For $D_0=[L_3,U_3]$ and $D_1=[L_4,U_4]$ it is respectively
+\[
+ [-19t+L_3,-3t+U_3],\qquad[-18t+L_4,-4t+U_4].
+\]
+These five intervals depend only on $t$ and the table row, and are
+independent of the residue $k$ on the entire minimal support.  Let
+$U_t(V)$ be the monic rational function having these numerator and
+denominator roots.  It has degree $-1$.
+
+As in the broad-shell proof,
+$\mathcal Q=(X^p-X)\overline{\mathcal N}/\overline{\mathcal D}$ is a
+polynomial of degree $p-2$.  At a minimal-support residue the local
+factorization is
+\[
+ pF_n\bigl(k+p(V+\epsilon)\bigr)
+       \equiv-\mathcal Q(k)U_t(V)\pmod p;
+\]
+outside that support its reduction is zero.  Distinct high roots differ
+by at most $\lfloor29n/p\rfloor<p$, so all local partial-fraction
+operations have $p$-integral coefficients.  A denominator root $l$ of
+$U_t$ has harmonic index $-l$ after extracting the multiples of $p$ from
+$H_{j+2n}^{(r)}$.  These indices are at most $19n/p<p$, so their harmonic
+numbers are $p$-integral too.  The resulting leading local readout is
+therefore a constant depending on $t$ and the table row, multiplied by
+$\mathcal Q(k)$.  The sum over $k$ vanishes since
+$\deg\mathcal Q<p-1$.  This proves (PS) for every periodic lift.
+
+The normalization valuation
+$c(f)=2\lfloor15f\rfloor-3\lfloor10f\rfloor$ is unchanged by the lift.
+On the table intervals the baseline profile is exactly $c(f)+1$ for both
+readouts, including every lifted interval; (PS) raises it to $c(f)+2$.
+The same rational certificate checks these equalities against the
+baseline chamber table.
+
+\paragraph{Arithmetic density.}
+If
+\[
+ H_n^*=\prod_{\substack{p>29,\ p^2>30n\\\{n/p\}\in\mathcal S}}p,
+\]
+then the prime number theorem gives
+\[
+ \lim_{n\to\infty}\frac{\log H_n^*}{n}
+ =\sum_{(a,b)\subset\mathcal S}\sum_{t=0}^{\infty}
+      \left(\frac1{t+a}-\frac1{t+b}\right).
+\]
+The discarded primes have logarithmic total $o(n)$.  All terms are
+positive.  At $t=0$ the exact sum is $195197/55440$; summing only
+$t=0,\ldots,999$ gives the exact rational lower bound recorded by the
+certificate, and in particular
+\[
+ \liminf_{n\to\infty}\frac{\log H_n^*}{n}
+       >3.6747281958.
+\]
+Thus the previously certified baseline density $26.2366642995$ improves
+to a certified density greater than $29.9113924953$.
