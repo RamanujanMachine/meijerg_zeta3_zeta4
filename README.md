@@ -7,15 +7,14 @@ approximants to fixed combinations `A ζ(3) + B ζ(4)`. The main account is the
 [improved manuscript](results/meijerg5255_improved/meijerg_zeta3_zeta4_improved.pdf)
 ([TeX source](results/meijerg5255_improved/meijerg_zeta3_zeta4_improved.tex)).
 
-**Main conditional result.** Let `r_N(A,B)` be the prescribed approximant,
+**Main result.** Let `r_N(A,B)` be the prescribed approximant,
 `q_N(A,B)` its *reduced* positive denominator, and
 
 ```text
 δ_N(A,B) = -1 - log|A ζ(3) + B ζ(4) - r_N(A,B)| / log q_N(A,B).
 ```
 
-Under the analytic growth and error estimates stated in the manuscript, the
-improved arithmetic argument gives, for every fixed integer pair `(A,B) ≠ (0,0)`,
+For every fixed integer pair `(A,B) ≠ (0,0)`,
 
 ```text
 liminf δ_N(A,B) > 0.01634832;
@@ -34,9 +33,10 @@ kernel, prime-carry chambers, first-order shells, and a second-order trace
 cancellation on the periodic windows `{n/p} ∈ (1/10, 2/19)` and
 `{n/p} ∈ (11/12, 15/16)`, where `n = N - 1`. Its common divisor has logarithmic
 density greater than `30.45854724380549`. The growth and approximation-error
-rates are **accepted analytic inputs**, not reproved in this manuscript. See
-[REPORT.txt](results/meijerg5255_improved/REPORT.txt) for the precise scope,
-finite-depth checks, and limitations.
+rates are accepted analytic inputs in the manuscript; the Lean formalization
+below proves them too, so the complete result assumes only the prime number
+theorem. See [REPORT.txt](results/meijerg5255_improved/REPORT.txt) for the
+manuscript's scope, finite-depth checks, and limitations.
 
 The [`lean/`](lean/) directory contains a Lean 4 formalization (Mathlib,
 `leanprover/lean4:v4.35.0-rc4`) of the main theorems `main_joint` and
