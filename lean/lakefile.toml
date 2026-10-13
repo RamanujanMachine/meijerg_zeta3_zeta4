@@ -1,0 +1,16 @@
+name = "meijer5255"
+version = "0.1.0"
+defaultTargets = ["Meijer5255"]
+
+[leanOptions]
+pp.unicode.fun = true
+autoImplicit = false
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "f69ff8554f52f2cb9caa43e8732904b28d26bc9c"
+
+[[lean_lib]]
+name = "Meijer5255"
+globs = ["Meijer5255.+"]

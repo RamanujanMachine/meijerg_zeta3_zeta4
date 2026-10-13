@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "graph-render",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-I", "C:\\Users\\tealeaf\\AppData\\Local\\Temp\\claude\\C--Users-tealeaf-Desktop-ramanujan-machine-meijerg-zeta3-zeta4\\50ced620-7c6b-44e6-8471-1671105f0671\\scratchpad\\render\\server.py", "8765"],
+      "port": 8765
+    }
+  ]
+}
