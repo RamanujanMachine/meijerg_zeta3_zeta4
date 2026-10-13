@@ -38,11 +38,17 @@ rates are **accepted analytic inputs**, not reproved in this manuscript. See
 [REPORT.txt](results/meijerg5255_improved/REPORT.txt) for the precise scope,
 finite-depth checks, and limitations.
 
-The [Lean handoff](LEAN_HANDOFF.md) lays out a plan to formalize the entire
-argument, including the analytic input and the CMF readout identity. The
-`lean/` directory currently contains a Lake configuration and toolchain, but
-no theorem source under `lean/Meijer5255/`; **this result has not yet been
-formalized in Lean**. The configured toolchain is `leanprover/lean4:v4.35.0-rc4`.
+The [`lean/`](lean/) directory contains a Lean 4 formalization (Mathlib,
+`leanprover/lean4:v4.35.0-rc4`) of the main theorems `main_joint` and
+`main_pure3`, including the CMF readout identity and the analytic growth and
+decay input (which the manuscript accepts but the formalization proves, from
+code adapted from `../zetas_irr`). It builds with `lake build`; the only
+unproved statement is the prime number theorem
+([`lean/Meijer5255/PNT.lean`](lean/Meijer5255/PNT.lean)), so `#print axioms`
+shows the standard axioms plus that one `sorry`. See
+[`lean/DEPENDENCY_GRAPH.md`](lean/DEPENDENCY_GRAPH.md) for the structure and
+[`lean/BUILD_TIMES.md`](lean/BUILD_TIMES.md) for build times; the original plan
+is the [Lean handoff](LEAN_HANDOFF.md).
 
 ## Reproducing the certificates
 
@@ -74,4 +80,4 @@ files serve as checkpoints. For commands to generate a new depth, see the
 | [`work/meijerg5255_improved/`](work/meijerg5255_improved/) | Scripts and source material for the second-order trace, density, final bounds, and numerical checks. |
 | [`results/meijerg5255_arithmetic/`](results/meijerg5255_arithmetic/) and [`work/meijerg5255_arithmetic/`](work/meijerg5255_arithmetic/) | Predecessor arithmetic proof, baseline certificates, native matrices, and spectral calculations. |
 | [`results/meijerg5255_z3_z4_readout/`](results/meijerg5255_z3_z4_readout/) and [`work/meijerg5255_z3_z4_readout/`](work/meijerg5255_z3_z4_readout/) | Earlier readout checks and reproduction code. |
-| [`LEAN_HANDOFF.md`](LEAN_HANDOFF.md) and [`lean/`](lean/) | Formalization plan and preliminary Lake project. |
+| [`LEAN_HANDOFF.md`](LEAN_HANDOFF.md) and [`lean/`](lean/) | Formalization plan and the Lean 4 formalization (only the prime number theorem is assumed). |
